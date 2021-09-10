@@ -100,8 +100,8 @@ $(document).ready(function() {
 	<div class="soon">
 		<div class="container">
 			<img src="images/logo.png">
-			
-			<div id="countdown1" class="ClassyCountdownDemo"></div>
+			<h3 style="margin-bottom: 15px;">Comming Soon</h3>
+			{{-- <div id="countdown1" class="ClassyCountdownDemo"></div> --}}
 			<h4>Don't Miss Out</h4>  
 		</div> 
 	</div>

@@ -31,7 +31,7 @@
                     </ul> 
                 </li> 
                 <li class="dropdown head-dpdn">
-                    <a href="contact.html" class="dropdown-toggle"><i class="fa fa-map-marker" aria-hidden="true"></i> Store Finder</a>
+                    <a href="/products" class="dropdown-toggle"><i class="fa fa-map-marker" aria-hidden="true"></i> Store Finder</a>
                 </li> 
                 <li class="dropdown head-dpdn">
                     <a href="card.html" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Credit Card</a>
@@ -58,7 +58,7 @@
             </div>
             <div class="header-cart"> 
                 <div class="my-account">
-                    <a href="contact.html"><i class="fa fa-map-marker" aria-hidden="true"></i> CONTACT US</a>						
+                    <a href="/contact-us"><i class="fa fa-map-marker" aria-hidden="true"></i> CONTACT US</a>						
                 </div>
                 <div class="cart"> 
                     <form action="#" method="post" class="last"> 

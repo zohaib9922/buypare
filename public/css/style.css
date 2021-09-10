@@ -217,6 +217,7 @@ ul.cd-dropdown-content li {
     border-color: #054aaf;
 }
 .header-search .btn-default {
+    margin: 0 !important;
     border: none;
     position: absolute;
     top: 0px;
@@ -225,6 +226,7 @@ ul.cd-dropdown-content li {
     height: 50px;
     outline: none;
     box-shadow: none;
+    font-size: 18px;
     background: #054aaf;
     padding: 0;
     border-radius: inherit;
@@ -242,12 +244,7 @@ ul.cd-dropdown-content li {
     color: #000;
 }
 /*-- cart-box --*/ 
-.cart {
-    margin-right: 2em;
-    padding-right: 2em;
-    border-right: 1px solid #6495ed;
-    float: left;
-} 
+
 .w3view-cart {
     background: #0280e1;
     border: none;
@@ -3836,6 +3833,7 @@ h3.w3ls-title {
 .card-top-grids i.fa {
     font-size: 2.2em;
 }
+
 .ftr-top-left {
     width: 50%;
     padding: 0;
@@ -3975,3 +3973,7 @@ h3.w3ls-title.w3ls-title1 {
 }
 }
 /*-- //responsive-design --*/
+
+
+/* CART */
+

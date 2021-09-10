@@ -13,6 +13,13 @@
         <link href="css/ken-burns.css" rel="stylesheet" type="text/css" media="all" /> <!-- banner slider --> 
         <link href="css/animate.min.css" rel="stylesheet" type="text/css" media="all" /> 
         <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all"> <!-- carousel slider -->  
+        <link href="css/mb-min.css" rel="stylesheet" type="text/css" media="all"> 
+        
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="{!! asset('/css/mb.css') !!}" rel="stylesheet"><!-- carousel slider -->  
+        <link href="{!! asset('/css/mbs.css') !!}" rel="stylesheet"><!-- carousel slider -->
+        <link href="{!! asset('/css/mbpro.css') !!}" rel="stylesheet"><!-- carousel slider -->
         <!-- //Custom Theme files -->
         <!-- font-awesome icons -->
         <link href="css/font-awesome.css" rel="stylesheet"> 
