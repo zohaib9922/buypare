@@ -34,7 +34,24 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		animation: "slide",
 		controlNav: "thumbnails"
 	  });
+	  let accordion = document.querySelector('.accordion-list');
+let items = accordion.querySelectorAll('li');
+let questions = accordion.querySelectorAll('.accordion-title');
+
+questions.forEach(question => question.addEventListener('click', toggleAccordion));
+
+function toggleAccordion(){
+    thisItem = this.parentNode;
+    items.forEach(item => {
+        if (thisItem == item){
+            thisItem.classList.toggle('open');
+            return;
+        }
+        item.classList.remove('open');
+    })
+}
 	});
+	
 </script>
 <!--flex slider-->
 <script src="js/imagezoom.js"></script>
@@ -96,58 +113,135 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	});
 </script>
 <!-- //smooth-scrolling-of-move-up -->  
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  -webkit-transition: color .15s ease;
+  transition: color .15s ease;
+}
+
+
+
+.accordion-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.accordion-list {
+  width: 90%;
+}
+
+.accordion-list li {
+  border-bottom: 2px solid #e7e7e9;
+}
+
+.accordion-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+
+
+.accordion-title:hover {
+  color: #f47c57;
+}
+
+.accordion-list p {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.accordion-list li.open h2 {
+  font-weight: 600;
+}
+
+.accordion-list li.open p {
+  max-height: 105px;
+  padding-bottom: 20px;
+}
+
+.accordion-list li.open figure {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 10px;
+  }
+  .container {
+    width: 80%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px;
+  }
+  .img-container,
+  .img-box {
+    display: none;
+  }
+  .img-container-mobile {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .img-girl-mobile {
+    position: absolute;
+    top: -125px;
+  }
+  .img-shadow-mobile {
+    position: absolute;
+    top: -20px;
+  }
+  .accordion-container {
+    margin: auto;
+    width: 90%;
+    padding-top: 120px;
+  }
+  .accordion-list {
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
+</style>
 </head>
 <body>
 	<!-- header -->
 	<div class="header">
-		<div class="w3ls-header"><!--header-one--> 
-			<div class="w3ls-header-left">
-				<p><a href="#">UPTO $50 OFF ON LAPTOPS | USE COUPON CODE LAPPY </a></p>
-			</div>
-			<div class="w3ls-header-right">
-				<ul>
-					<li class="dropdown head-dpdn">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> My Account<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="login.html">Login </a></li> 
-							<li><a href="signup.html">Sign Up</a></li> 
-							<li><a href="login.html">My Orders</a></li>  
-							<li><a href="login.html">Wallet</a></li> 
-						</ul> 
-					</li> 
-					<li class="dropdown head-dpdn">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-percent" aria-hidden="true"></i> Today's Deals<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="offers.html">Cash Back Offers</a></li> 
-							<li><a href="offers.html">Product Discounts</a></li>
-							<li><a href="offers.html">Special Offers</a></li> 
-						</ul> 
-					</li> 
-					<li class="dropdown head-dpdn">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> Gift Cards<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="offers.html">Product Gift card</a></li> 
-							<li><a href="offers.html">Occasions Register</a></li>
-							<li><a href="offers.html">View Balance</a></li> 
-						</ul> 
-					</li> 
-					<li class="dropdown head-dpdn">
-						<a href="contact.html" class="dropdown-toggle"><i class="fa fa-map-marker" aria-hidden="true"></i> Store Finder</a>
-					</li> 
-					<li class="dropdown head-dpdn">
-						<a href="card.html" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Credit Card</a>
-					</li> 
-					<li class="dropdown head-dpdn">
-						<a href="help.html" class="dropdown-toggle"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
-					</li>
-				</ul>
-			</div>
-			<div class="clearfix"> </div> 
-		</div>
+		
 		<div class="header-two"><!-- header-two -->
         <div class="container">
 				<div class="header-logo">
-					<a href="/"><img src="images/logo.png"</a>
+					<a href="/"><img src="images/logo.png"></a>
 				</div>	
 				<div class="header-search">
 					<form action="#" method="post">
@@ -159,7 +253,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="header-cart"> 
 					<div class="my-account">
-						<a href="contact.html"><i class="fa fa-map-marker" aria-hidden="true"></i> CONTACT US</a>						
+						<a href="/contact-us"><i class="fa fa-map-marker" aria-hidden="true"></i> CONTACT US</a>						
 					</div>
 					<div class="cart"> 
 						<form action="#" method="post" class="last"> 
@@ -260,6 +354,52 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 			</div> 
+			<div class="container">
+				<div class="img-container flex-column-center">
+			
+				<div class="accordion-container flex-column-center">
+				  
+				  <ul class="accordion-list">
+					<li>
+					  <div class="accordion-title">
+						<h2>Compare</h2>
+						<figure>
+						  <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
+						</figure>
+					  </div>
+					  <div class="row">
+						{{-- <div class="col-md-3">
+							<img src="images/s2.jpg" data-imagezoom="true" class="img-responsive" alt="" draggable="false">
+						</div> --}}
+						<div class="col-md-12">
+
+							
+								<p style="width:30%; float:left;"> 
+									<img style="width: 80%;
+									height: auto;" src="images/s3.jpg">
+								</p>
+								<p style="width:70%; float:left;">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+								</br></br><i class="fa fa-briefcase" aria-hidden="true"></i> From RM 4</br>
+								 <i class="fa fa-truck" aria-hidden="true"></i> Express delivery available</br>
+								 <i class="fa fa-credit-card-alt" aria-hidden="true"></i> Online Banking, Debit/Credit Card</br>
+								</br>
+								 <a class="btn btn-success" href="#">Go to Store<i class="sprite-icons cI i-call-action-new"></i></a>
+								</p>
+							
+							
+						</div>
+						
+					  </div>
+					</li>
+				  </ul>
+				</div>
+				<!-- <figure class="img-box">
+				  <svg width="191" height="184" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter x="-97.9%" y="-76.3%" width="295.8%" height="313.7%" filterUnits="objectBoundingBox" id="a"><feOffset dy="25" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="25" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.209139076 0 0 0 0 0.0691446444 0 0 0 0 0.478091033 0 0 0 0.497159091 0" in="shadowBlurOuter1"/></filter><path id="b" d="M0 27.756v53.87l41.968 24.035 47.387-28.025v-53.87"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(50.93 2.125)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#FF9271" xlink:href="#b"/></g><path fill="#DF5C34" fill-rule="nonzero" d="M92.899 53.917v53.87l47.387-28.026v-53.87z"/><path fill="#F47B56" fill-rule="nonzero" d="M50.93 29.88L99.624 2.126l40.662 23.767-47.387 28.025z"/><path d="M94.013 14.49a25.942 25.942 0 0114.207 3.129c2.486 1.462 3.844 2.988 4.036 4.579.192 1.59-.628 2.975-2.562 4.143a9.115 9.115 0 01-2.985 1.18c-.869.205-1.76.295-2.652.269l-.974-.077c.091.217.151.446.18.68a3.132 3.132 0 01-.513 1.552 5.704 5.704 0 01-2.1 2.065 12.633 12.633 0 01-6.7 1.77 13.247 13.247 0 01-6.957-1.757c-1.999-1.18-3.023-2.566-3.1-4.156a4.49 4.49 0 012.562-4.015 8.488 8.488 0 012.357-1.013 9.175 9.175 0 012.037-.346h.705l-1.282-.77 3.6-2.244 8.34 4.912a4.377 4.377 0 004.15 0c1.769-1.103 1.137-2.552-1.895-4.348a19.261 19.261 0 00-10.556-2.347 21.67 21.67 0 00-11.018 3.168c-3.023 1.89-4.522 4.143-4.496 6.76 0 2.564 1.601 4.848 4.714 6.682a21.015 21.015 0 0011.146 2.655 20.926 20.926 0 0011.017-2.925 12.353 12.353 0 003.062-2.565 5.683 5.683 0 001.28-2.18l.18-.808 4.753.269c.008.145.008.29 0 .436a8.216 8.216 0 01-.346 1.154 8.303 8.303 0 01-.82 1.72 11.912 11.912 0 01-1.69 2 15.952 15.952 0 01-2.755 2.13 25.602 25.602 0 01-9.326 3.36 35.176 35.176 0 01-10.877.192 24.896 24.896 0 01-9.339-3.053 12.127 12.127 0 01-5.304-5.566 8.192 8.192 0 010-6.593 12.692 12.692 0 015.266-5.759 28.966 28.966 0 0114.655-4.284zm4.663 13.262c-.17-.891-.77-1.64-1.601-2.001a6.579 6.579 0 00-3.33-.911 5.619 5.619 0 00-3.101.795 2.283 2.283 0 00-1.281 2.001c.117.89.69 1.654 1.512 2.014a6.54 6.54 0 003.394.86 6.092 6.092 0 003.254-.847 2.065 2.065 0 001.205-1.911" fill="#3E2928" fill-rule="nonzero"/></g></svg>
+				</figure> -->
+			  
+			  </div>
+			  
 			<!-- recommendations -->
 			<div class="recommend">
 				<h3 class="w3ls-title">Our Recommendations </h3> 

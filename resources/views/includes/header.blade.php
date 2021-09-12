@@ -1,5 +1,5 @@
 <div class="header {{ Route::currentRouteName() }}">
-    <div class="w3ls-header"><!--header-one--> 
+    {{-- <div class="w3ls-header"><!--header-one--> 
         <div class="w3ls-header-left">
             <p><a href="#">UPTO $50 OFF ON LAPTOPS | USE COUPON CODE LAPPY </a></p>
         </div>
@@ -42,7 +42,7 @@
             </ul>
         </div>
         <div class="clearfix"> </div> 
-    </div>
+    </div> --}}
     <div class="header-two"><!-- header-two -->
         <div class="container">
             <div class="header-logo">
@@ -847,6 +847,86 @@
                                 </ul><!-- .cd-secondary-dropdown --> 
                             </li>  
                             <li><a href="sitemap.html">Full Site Directory </a></li>  
+                            <li class="has-children">
+                                <a href="#">See More</a>
+                                <ul class="cd-secondary-dropdown is-hidden">
+                                    <li class="go-back"><a href="#">Menu</a></li>
+                                    <li class="see-all"><a href="products9.html">All Products</a></li>
+                                    <li class="has-children">
+                                        <a href="#">Books</a> 
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#"></a></li>
+                                            <li class="has-children"><a href="#">Exam books </a>
+                                                <ul class="is-hidden">
+                                                    <li class="go-back"><a href="#"> </a></li>
+                                                    <li><a href="products9.html">CAT/MAT/XAT</a></li>
+                                                    <li><a href="products9.html">Civil Services</a></li>
+                                                    <li><a href="products9.html">AFCAT</a></li>
+                                                    <li><a href="products9.html">New Releases</a></li>
+                                                </ul>												
+                                            </li>
+                                            <li><a href="products9.html">Academic Text </a></li>
+                                            <li><a href="products9.html">Romance Books </a></li>
+                                            <li><a href="products9.html">Journals </a></li>
+                                            <li><a href="products9.html">Children's & Teen Books </a></li>
+                                        </ul>
+                                    </li> 
+                                    <li class="has-children">
+                                        <a href="#">Music</a> 
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#"></a></li>
+                                            <li><a href="products9.html">New Releases </a></li> 
+                                            <li><a href="products9.html">Country Music </a></li>
+                                            <li><a href="products9.html">Musical Instruments </a></li>
+                                            <li><a href="products9.html">Collections</a></li>
+                                            <li><a href="products9.html">Boxed Sets </a></li>
+                                        </ul>
+                                    </li> 
+                                    <li class="has-children">
+                                        <a href="#">Music Combo</a> 
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#"></a></li>
+                                            <li><a href="products9.html">Pop </a></li> 
+                                            <li><a href="products9.html">Preorders </a></li>
+                                            <li><a href="products9.html">Album Songs</a></li>
+                                            <li><a href="products9.html">Top 50 CDs </a></li>
+                                            <li><a href="products9.html">Music DVDs </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-children">
+                                        <a href="#">Movies</a> 
+                                        <ul class="is-hidden"> 
+                                            <li class="go-back"><a href="#"></a></li>
+                                            <li><a href="products9.html">New Releases </a></li> 
+                                            <li><a href="products9.html">Children & Family </a></li>
+                                            <li><a href="products9.html">Action</a></li>
+                                            <li><a href="products9.html">Classic Movies </a></li>
+                                            <li><a href="products9.html">Bollywood Movies </a></li>
+                                        </ul>
+                                    </li> 
+                                    <li class="has-children">
+                                        <a href="#">Movies Combo</a> 
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#"></a></li>
+                                            <li><a href="products9.html">Hollywood Movies </a></li> 
+                                            <li><a href="products9.html">Digital Movies </a></li>
+                                            <li><a href="products9.html">Boxed Sets</a></li>
+                                            <li><a href="products9.html">Animated</a></li>
+                                            <li><a href="products9.html">Adventure</a></li>
+                                        </ul>
+                                    </li> 
+                                    <li class="has-children">
+                                        <a href="#">TV Shows</a> 
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#"></a></li>
+                                            <li><a href="products9.html">Serials</a></li> 
+                                            <li><a href="products9.html">Best Programs</a></li>
+                                            <li><a href="products9.html">Celebrations</a></li>
+                                            <li><a href="products9.html">Top Shows</a></li> 
+                                        </ul>
+                                    </li> 
+                                </ul><!-- .cd-secondary-dropdown --> 
+                            </li> 
                         </ul> <!-- .cd-dropdown-content -->
                     </nav> <!-- .cd-dropdown -->
                 </div> <!-- .cd-dropdown-wrapper -->	 

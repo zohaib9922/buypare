@@ -60,7 +60,7 @@
 }
 .kb_wrapper{
     overflow:hidden;
-    max-height:560px; 
+    max-height:516px; 
 }
 .kb_wrapper>.carousel-inner>.item>img,.kb_wrapper>.carousel-inner>.item>a>img{
     margin:auto;

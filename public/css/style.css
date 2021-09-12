@@ -166,7 +166,14 @@ ul.cd-dropdown-content li {
 .header-cart {
     float: right;
 	margin: 1.3em 0;
-}  
+} 
+.open{
+    height: 420px;
+} 
+.open p{
+    height: 350px !important;
+    max-height: 260px !important;
+}
 .header-logo h1,.footer-logo.header-logo h2{
     font-size: 3em; 
     font-weight: 900;
@@ -200,6 +207,7 @@ ul.cd-dropdown-content li {
 .header-search form {
     position: relative;
 }
+
 .header-search input[type="search"] {
     width: 100%;
     padding: 1em 5em 1em 1em;
@@ -212,6 +220,11 @@ ul.cd-dropdown-content li {
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
+    border: 1px solid #054aaf;
+    background-color: #cdc5c51f;
+}
+.w3ls-cart {
+    display: none !important;
 }
 .header-search input[type="search"]:focus {
     border-color: #054aaf;
@@ -1130,6 +1143,22 @@ p {
 	-o-transition: .5s all;
 	-ms-transition: .5s all;
 	transition: .5s all;
+}
+.agile-products img{
+    background-color: #80808054;
+    padding: 10px;
+}
+.agile-products{
+    border: 0 !important;
+    padding:0 !important;
+}
+.agile-product-text h5{
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.products .container{
+    width: 1320px;
 }
 .new-tag h6 {
     color: #fff;
