@@ -99,8 +99,8 @@ $(document).ready(function() {
 	<!-- coming soon -->
 	<div class="soon">
 		<div class="container">
-			<img src="images/logo.png">
-			<h3 style="margin-bottom: 15px;">Comming Soon</h3>
+			<img class="soon-logo" src="images/logo.png">
+			<h3 class="coming-soon-text" style="margin-bottom: 15px;">Coming Soon</h3>
 			{{-- <div id="countdown1" class="ClassyCountdownDemo"></div> --}}
 			<h4>Don't Miss Out</h4>  
 		</div> 
@@ -114,7 +114,7 @@ $(document).ready(function() {
 	
 	<!-- //subscribe --> 
 	<!-- footer -->
-	<div class="copy-right"> 
+	<div class="copy-right soon-copy"> 
 		<div class="container">
 			<p>© 2021 BuyPare . All rights reserved</p>
 		</div>

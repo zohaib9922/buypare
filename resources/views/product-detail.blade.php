@@ -29,6 +29,43 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <script defer src="js/jquery.flexslider.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <script>
+    
+	$(document).ready(function(){
+   
+	   $('#search').keyup(function(){ 
+		   var query = $(this).val();
+		   if(query != '')
+		   {
+			  
+			   var _token = $('input[name="_token"]').val();
+			   $.ajax({
+			   url:"{{ route('autocomplete.fetch') }}",
+			   method:"POST",
+			   data:{query:query, _token: '{{csrf_token()}}'},
+			   success:function(data){
+				   $('#products').fadeIn();  
+						   $('#products').html(data);
+				   }
+			   });
+		   }
+	   });
+   
+	  $(document).on('click', 'li', function(){  
+		  $('#search').val($(this).text());  
+		  $('#products').fadeOut();  
+	  }); 
+	  
+	  $("#search").focusout(function () {
+		   $("#products").hide();
+	   });
+   
+   });
+   
+   
+   
+   </script>
+
+<script>
 	// Can also be used with $(document).ready()
 	$(window).load(function() {
 	  $('.flexslider').flexslider({
@@ -36,11 +73,11 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		controlNav: "thumbnails",
 		direction: "vertical"
 	  });
-	  let accordion = document.querySelector('.accordion-list');
-let items = accordion.querySelectorAll('li');
-let questions = accordion.querySelectorAll('.accordion-title');
+// 	  let accordion = document.querySelector('.accordion-list');
+// let items = accordion.querySelectorAll('li');
+// let questions = accordion.querySelectorAll('.accordion-title');
 
-questions.forEach(question => question.addEventListener('click', toggleAccordion));
+// questions.forEach(question => question.addEventListener('click', toggleAccordion));
 
 function toggleAccordion(){
     thisItem = this.parentNode;
@@ -86,6 +123,7 @@ function toggleAccordion(){
         });
     });
 </script>
+
 <!-- //scroll to fixed--> 
 <!-- start-smooth-scrolling -->
 <script type="text/javascript" src="js/move-top.js"></script>
@@ -374,7 +412,7 @@ function toggleAccordion(){
 							<div class="row">
 							  <div class="col-sm-12">
 								<div class="card-block">
-								  <p><span class="company-icon card-icon"><img src="/images/Lazada-icon.svg"></span></p>
+								  <p><span class="company-icon card-icon"><img src="/images/shopee-icon.png"></span></p>
 								  </br>
 								  <div class="row">
 									<div class="col-md-5">
@@ -386,7 +424,7 @@ function toggleAccordion(){
 										<h3><b>RM 6,369.25</b></h3>
 									</div>
 								  </div>
-								  <a href="#" class="btn store-btn btn-primary btn-sm float-right">Go to Store > </a>
+								  <a href="#" class="btn store-btn btn-primary btn-sm float-right">Vist Store > </a>
 								</div>
 							  </div>
 					   
@@ -454,7 +492,7 @@ function toggleAccordion(){
 				</figure> -->
 			  
 			  </div> --}} 
-			  <h3 class="w3ls-title">Compare</h3>
+			  <h3 class="w3ls-title">Comparison</h3>
 			  <div class="col-md-12 pd-0">
 				<div class="card float-right">
 					<div class="row">
@@ -462,7 +500,7 @@ function toggleAccordion(){
 						
 						<div class="card-block compare-card">
 							<div class="col-md-3 mt-10">
-								<p><span class="company-icon card-icon"><img src="/images/Lazada-icon.svg"></span></p>
+								<p><span class="company-icon card-icon"><img src="/images/shopee-icon.png"></span></p>
 								</br>
 								<div class="row">
 									<p><b>Apple Iphone Se (64Gb/128Gb/256Gb) Malaysia  Warranty 1 Year (Imported Set) Black,64GB</b></p>
@@ -496,7 +534,111 @@ function toggleAccordion(){
 								</br>
 							</br>
 						</br>
-									<a href="#" class="btn store-btn btn-primary btn-sm float-right">Go to Store > </a>
+									<a href="#" class="btn store-btn btn-primary btn-sm float-right">Vist Store > </a>
+								  </div>
+								
+							</div>
+
+						<div>
+					  </div>
+			   
+					</div>
+				  </div>
+				</div>
+
+				<div class="card float-right">
+					<div class="row">
+					  <div class="col-sm-12">
+						
+						<div class="card-block compare-card">
+							<div class="col-md-3 mt-10">
+								<p><span class="company-icon card-icon"><img src="/images/shopee-icon.png"></span></p>
+								</br>
+								<div class="row">
+									<p><b>ASUS Vivobook 15 K513E-Abn765Ts 15.6'' Fhd Laptop Indie Black ( I5-1135G7, 8Gb, 512Gb Ssd, Iris Xe, W10, Hs )</b></p>
+								</div>
+								
+							</div>
+							<div class="col-md-3">
+								<div class="row">
+									<div class="cN"> <div class="w-10-l sprite-icons cI i-delivery-truck mt01r mt01r-l"></div> <div class="cG w-90-l u"> <p><i class="fa fa-truck" aria-hidden="true"></i><span> From RM 4</span></p><p><span>1-7 working days</span></p><p><span>Express delivery available</span></p><p></p> </div> </div>
+									<div class="cN"> <div class="w-10-l sprite-icons cI i-delivery-truck mt01r mt01r-l"></div> <div class="cG w-90-l u"> <p><i class="fa fa-credit-card-alt" aria-hidden="true"></i> <span> From RM 4</span></p><p><span>1-7 working days</span></p><p><span>Express delivery available</span></p><p></p> </div> </div>
+								</div>
+							</div>
+							<div class="col-md-3 rm-section">
+								<div class="row">
+									<div class="col-md-12">
+									</br>
+								</br>
+							
+										<h3><b>RM 9969.05</b></h3>
+									</br>
+										<p><b class="inside-b">Rating:</b> 5.0</p>
+										<p><i class="fa fa-map-marker" aria-hidden="true"></i>  Local</p>
+										<br>
+									</div>
+								  </div>
+								
+							</div>
+
+							<div class="col-md-3">
+								<div class="row">
+								</br>
+							</br>
+						</br>
+									<a href="#" class="btn store-btn btn-primary btn-sm float-right">Vist Store > </a>
+								  </div>
+								
+							</div>
+
+						<div>
+					  </div>
+			   
+					</div>
+				  </div>
+				</div>
+
+				<div class="card float-right">
+					<div class="row">
+					  <div class="col-sm-12">
+						
+						<div class="card-block compare-card">
+							<div class="col-md-3 mt-10">
+								<p><span class="company-icon card-icon"><img src="/images/shopee-icon.png"></span></p>
+								</br>
+								<div class="row">
+									<p><b>ASUS K513E-Abn765Ts/K513E-Abn766Ts/K513E-Abn767Ts – Intel I5-1135G7 |Ram 8Gb |512Gb Ssd |Intel Iris Xe | Laptop 15.6″</b></p>
+								</div>
+								
+							</div>
+							<div class="col-md-3">
+								<div class="row">
+									<div class="cN"> <div class="w-10-l sprite-icons cI i-delivery-truck mt01r mt01r-l"></div> <div class="cG w-90-l u"> <p><i class="fa fa-truck" aria-hidden="true"></i><span> From RM 4</span></p><p><span>1-7 working days</span></p><p><span>Express delivery available</span></p><p></p> </div> </div>
+									<div class="cN"> <div class="w-10-l sprite-icons cI i-delivery-truck mt01r mt01r-l"></div> <div class="cG w-90-l u"> <p><i class="fa fa-credit-card-alt" aria-hidden="true"></i> <span> From RM 4</span></p><p><span>1-7 working days</span></p><p><span>Express delivery available</span></p><p></p> </div> </div>
+								</div>
+							</div>
+							<div class="col-md-3 rm-section">
+								<div class="row">
+									<div class="col-md-12">
+									</br>
+								</br>
+							
+										<h3><b>RM 3369.30</b></h3>
+									</br>
+										<p><b class="inside-b">Rating:</b> 5.0</p>
+										<p><i class="fa fa-map-marker" aria-hidden="true"></i>  Local</p>
+										<br>
+									</div>
+								  </div>
+								
+							</div>
+
+							<div class="col-md-3">
+								<div class="row">
+								</br>
+							</br>
+						</br>
+									<a href="#" class="btn store-btn btn-primary btn-sm float-right">Vist Store > </a>
 								  </div>
 								
 							</div>
@@ -508,6 +650,9 @@ function toggleAccordion(){
 				  </div>
 				</div>
 			</div>
+		</div>
+	</div>
+			
 			  
 			<!-- recommendations -->
 			<div class="recommend">
@@ -678,6 +823,8 @@ function toggleAccordion(){
 			<!-- //offers-cards -->
 		</div>
 	</div>
+	
+
 	<!--//products-->  
 	<!-- footer-top -->
 	

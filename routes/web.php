@@ -22,6 +22,7 @@ use App\Http\Controllers\SearchController;
 
 
 Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/coming-soon',[HomeController::class,'commingsoon'])->name('home');
 Route::get('/contact-us',[PagesController::class,'index'])->name('contact');
 Route::get('/cart',[CartController::class,'index'])->name('cart');
 Route::get('/products',[ProductsController::class,'index']);

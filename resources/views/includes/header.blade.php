@@ -57,6 +57,7 @@
                         <i class="fa fa-search" aria-hidden="true"> </i>
                     </button>
                 </form>
+                <div id="searchbox-overlay" class="db ei eK eo eA hm ra" [class]="autoSuggestState.show? 'db ei eK eo eA hm ra': 'dn ei eK eo eA hm ra'" role="button" tabindex="0" on="tap:AMP.setState({'autoSuggestState':{ show: false }});" i-amphtml-binding=""></div>
             </div>
             <div class="header-cart"> 
                 <div class="my-account">
@@ -944,3 +945,49 @@
         </div>
     </div>
 </div>
+@section('jsContent')
+
+<script>
+    
+ $(document).ready(function(){
+
+    $('#search').keyup(function(){ 
+        var query = $(this).val();
+        if(query != '')
+        {
+           
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+            url:"{{ route('autocomplete.fetch') }}",
+            method:"POST",
+            data:{query:query, _token: '{{csrf_token()}}'},
+            success:function(data){
+                $('#products').fadeIn();  
+                        $('#products').html(data);
+                }
+            });
+        }
+    });
+
+   $(document).on('click', 'li', function(){  
+       $('#search').val($(this).text());  
+       $('#products').fadeOut();  
+   }); 
+   
+   $("#search").focusin(function () {
+        $("body").css({"background-color": "#999999"});
+        $("#products").css({"visibility": "visibleyy"});
+    });
+
+    $("#search").focusout(function () {
+        $("body").css({"background-color": "transparent"});
+        $("#products").css({"visibility": "hidden"});
+    });
+    
+});
+
+
+
+</script>
+
+@endsection
