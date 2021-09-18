@@ -37,5 +37,10 @@ $(function ($) {
         var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
         doAnimations($animatingElems);
     });
+
+    
    
 });
+
+
+

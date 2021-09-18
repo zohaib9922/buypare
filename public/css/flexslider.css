@@ -30,11 +30,23 @@
 }
 .flex-control-nav {
 	position: absolute;
-	bottom: auto;
-	text-align: center;
-	left:-26%;
-	top: 0;
-	width: 24%;
+    bottom: -192px;
+    text-align: center;
+    left: 14%;
+    /* top: 0; */
+    width: 24%;
+}
+.flex-control-nav{
+	-webkit-transform: rotate(
+90deg);
+    -moz-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -o-transform: rotate(90deg);
+    display: inline-block;
+    vertical-align: text-top;
+    text-indent: 0px;
+    width: 31%;
+    margin-top: -24%;
 }
 ul.flex-direction-nav {
 	display: none;
@@ -43,7 +55,7 @@ ul.flex-direction-nav {
     margin: 1em 0;
 }
 .flex-control-thumbs img {
-	width: 100%;
+	width: 40%;
 	height: auto;
 	display: block;
 	opacity: .7;

@@ -4,11 +4,18 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;200;300;400;500;600&display=swap');
 body{
 	margin:0; 
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto Slab', serif;
 	background: #fff;
+}
+h4,p,h1,h2,h3,h5,span{
+    font-family: 'Noto Sans', sans-serif !important;
+}
+.menu a{
+    font-family: 'Noto Sans', sans-serif !important;
 }
 body a{ 
 	-webkit-transition: 0.5s all;
@@ -346,7 +353,7 @@ h3.w3ls-title {
     font-size: 2em;
     color: #000;
     margin: 1em 0;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 }
 .welcome-grids {
     float: left;
@@ -512,7 +519,7 @@ h3.w3ls-title {
     font-weight: normal;
     margin-bottom: 10px;
     padding-bottom: 10px;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 	font-weight: 600;
 	text-transform: capitalize;
 }
@@ -603,7 +610,7 @@ h3.w3ls-title {
     font-size: 1.2em;
     color: #fff;
     margin: 1.65em 0;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 }
 .w3ls-add-grids.w3ls-add-grids-mdl h4 {
     padding-top: 2em;
@@ -810,7 +817,7 @@ p {
 }
 .ftr-top-right h4 {
     font-size: 1.4em;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
     margin-bottom: 0.5em;
     color: #fff;
 }
@@ -838,13 +845,13 @@ p {
 .soon h3 {
     color: #fff; 
     font-size: 3em;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 }
 .soon h4 {
     font-size: 2em;
     margin: 1em 0 2em;
     color: #00b300;
-    /* font-family: 'Tangerine', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
     background: rgba(0, 0, 0, 0.75);
     display: inline-block;
     padding: .5em 1em;
@@ -890,7 +897,7 @@ p {
     font-size: 1.3em;
     color: #000;
     margin-bottom: 1em;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 } 
 .subscribe input[type="text"] {
     width: 70%;
@@ -1060,7 +1067,7 @@ p {
 .footer h3 {
     font-size: 1.4em;
     color: #f5f5f5;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
     margin-bottom: 1em;
     text-transform: uppercase;
 } 
@@ -1130,13 +1137,13 @@ p {
 /*-- //slider-up-arrow --*/  
 /*-- products-page --*/ 
 .new-tag:before {
-    content: '';
+    
     width: 0;
     height: 0;
     border-top: 60px solid #0280e1;
     border-right: 60px solid transparent;
     position: absolute;
-    top: 0;
+    top: 0;y
     left: 0;
 	-webkit-transition: .5s all;
 	-moz-transition: .5s all;
@@ -1180,6 +1187,9 @@ p {
     float: right;
     padding: 0;
 }
+#products{
+    position: absolute;
+}
 .breadcrumb.breadcrumb1  > li { 
     font-size: 1.1em;
     font-weight: 300;
@@ -1187,6 +1197,10 @@ p {
 .breadcrumb.breadcrumb1 li a {
     color: #0280e1;
 } 
+.product-title-detail{
+    padding-bottom: 27px;
+    font-size: 32px;
+}
 .breadcrumb.breadcrumb1  > .active,.breadcrumb.breadcrumb1 li a:hover{
     color: #000;
 }
@@ -1208,7 +1222,7 @@ p {
 .product-top h4 {
     font-size: 1.3em;
     color: #fff;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
     float: left;
 }
 .product-top ul li a.dropdown-toggle {
@@ -1239,7 +1253,7 @@ p {
 .agile-product-text h5{ 
     font-size: 1em;
     line-height: 1.8em;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 	margin-top: 1em;
     text-transform: capitalize;
 }
@@ -1345,7 +1359,7 @@ input.item_quantity:hover{
     color: #f44336;
     text-transform: uppercase;
     margin-bottom: 1em;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 }
 .checkbox {
     position: relative;
@@ -1640,7 +1654,7 @@ input#amount {
     font-size: 1em;
     color: #999;
     margin: 1em 0;
-    font-family: 'Offside', cursive;
+    font-family: 'Noto Sans', sans-serif;
 }
 /*-- //login-page --*/
 /*-- offers-page --*/
@@ -1664,7 +1678,7 @@ h3.w3ls-title.w3ls-title1 {
 .offer-card-grids h4 {
     font-size: 3em;
     color: #000;
-    /* font-family: 'Tangerine', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
     font-weight: 800;
 }
 .offer-card-grids p {
@@ -1693,7 +1707,7 @@ h3.w3ls-title.w3ls-title1 {
 .offer-bottom-grids h4 {
     font-size: 3.5em;
     color: #fff;
-    font-family: 'Tangerine', cursive;
+    font-family: 'Noto Sans', sans-serif;
 }
 .offer-bottom-grids h6 {
     font-size: 1.5em;
@@ -1838,7 +1852,7 @@ h3.w3ls-title.w3ls-title1 {
 .agile-card-text h5, .faq-w3agile h5{
     font-size: 1.3em;
     color: #000; 
-    font-family: 'Offside', cursive;
+    font-family: 'Noto Sans', sans-serif;
 }
 /*-- //card-page --*/
 /*-- help --*/
@@ -1911,7 +1925,7 @@ h3.w3ls-title.w3ls-title1 {
     color: #000;
     line-height: 1.5em;
     position: relative;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 }
 .services-grids:hover i.fa {
     background: #f44336;
@@ -1921,7 +1935,7 @@ h3.w3ls-title.w3ls-title1 {
 .values h5 {
     font-size: 1.5em;
     margin-bottom: 0.5em;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 	color: #137288;
 }
 .w3values-row {
@@ -1953,7 +1967,7 @@ h3.w3ls-title.w3ls-title1 {
 .privacy-w3row h5 {
     font-size: 1.3em;
     color: #000;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
     margin-top: 2em;
 }
 /*-- //privacy --*/
@@ -2031,11 +2045,12 @@ nav.sitemap-tabs.affix div#myNavbar {
     margin: 0 auto;
 }
 h3.w3sitemap-title {
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
     font-size: 1.5em;
 	color: #f44336; 
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 0.5em;
+
 }  
 h3.w3sitemap-title i.fa {
     font-size: 1.2em;
@@ -2088,12 +2103,29 @@ h5.sitemap-text-title {
 .single-top-left {
     margin-left:5%;
     width: 34%;
+    margin: 0 auto;
+}
+.top-margin{
+    margin-top: 110px;
+}
+.detail-ul li{
+    display: block !important;
+    color: black !important;
+    padding-bottom: 10px;
+}
+.icons-detail{
+    width: 20px;
+    margin-right: 10px;
+}
+.detail-ul li{
+    display: flex !important;
+    align-items: baseline;
 }
 .single-top-right h3 {
     text-transform: capitalize;
     font-size: 2em;
     color: #f44336;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 	margin-bottom: .3em;
 } 
 .single-top-right ul li {
@@ -2101,8 +2133,11 @@ h5.sitemap-text-title {
     margin-left: 3px;
     color: #0280e1;
 }
+.compare-title{
+    color: #0280e1;
+}
 .single-top-right {
-    padding-left: 5em;
+    padding-left: 20px;
 }  
 .single-rating {
     margin: 1em 0;
@@ -2125,6 +2160,9 @@ h5.sitemap-text-title {
     font-size: 1em;
     color: #999;
 }
+.mt-10{
+    margin-top: 10px;
+}
 .single-price ul li:nth-child(1) {
     font-size: 2.8em;
     font-weight: 300;
@@ -2133,10 +2171,59 @@ h5.sitemap-text-title {
 .single-price ul li span.w3off {
     font-size: 1.5em;
     color: #0280e1;
-    /* font-family: 'Offside', cursive; */
+    /* font-family: 'Noto Sans', sans-serif; */
 }
 .single-price.price ul li a {
     color: #f44336;
+}
+.mrm{
+    padding-right: 2px;
+}
+.mrm h3{
+    font-size: 22px;
+    color: #054aaf;
+}
+.store-btn{
+    padding: 11px;
+    border-radius: 10px;
+}
+.detail-ul{
+    border-bottom: 1px solid #80808036;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+}
+.right-border{
+    border-right: 1px solid #80808036;
+}
+.compare-card{
+    height: 210px;
+}
+.rm-section b,.rm-section p{
+    margin-left: 28px;
+}
+.inside-b{
+    margin-left: 0 !important;
+}
+.w-90-l{
+    margin-left: 78px;
+    margin-bottom: 9px;
+}
+.custom-wd{
+    width: 24% !important;
+}
+.card-block{
+    box-shadow: 1px 2px 14px #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+.store-btn{
+    width: 100%;
+}
+.card-icon img{
+    width: 101px;
+}
+.card-icon{
+    margin-bottom: 10px;
 }
 .single-price.price ul li a:hover{
     color: #999;
@@ -2385,7 +2472,7 @@ p.sbmincart-empty-text {
 }
 .agileits-modal h4 {
     color: #F44336;
-    /* font-family: 'Offside', cursive;  */
+    font-family: 'Noto Sans', sans-serif;
 	 font-size: 1.8em;
 } 
 .agileits-modal h5 {

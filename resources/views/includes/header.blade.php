@@ -50,7 +50,9 @@
             </div>	
             <div class="header-search">
                 <form action="#" method="post">
-                    <input type="search" name="Search" placeholder="Search for a Product..." required="">
+                    <input id="search" type="search" name="search" placeholder="Search for a Product..." required="">
+                    <div id="products">
+                    </div>
                     <button type="submit" class="btn btn-default" aria-label="Left Align">
                         <i class="fa fa-search" aria-hidden="true"> </i>
                     </button>
@@ -933,11 +935,11 @@
             </div>
             <div class="move-text">
                 <div class="marquee"><a href="#"> BuyPare Presents New collections here...... <span>Get extra 10% off on everything Just bu signing in </span> <span> BuyPare provides a comprehensive analysis and comparison of millions of Products</span> <span> BuyPare includes prodcucts from Shoppe , Lazada and Many more websites</span> </a></div>
-                <script type="text/javascript" src="js/jquery.marquee.min.js"></script>
-                <script>
-                  $('.marquee').marquee({ pauseOnHover: true });
-                  //@ sourceURL=pen.js
-                </script>
+                    <script type="text/javascript" src="js/jquery.marquee.min.js"></script>
+                    <script>
+                    $('.marquee').marquee({ pauseOnHover: true });
+                    //@ sourceURL=pen.js
+                    </script>
             </div>
         </div>
     </div>

@@ -196,3 +196,44 @@
     </div>  	
 </div> 
 @endsection
+
+@section('jsContent')
+
+<script>
+    
+ $(document).ready(function(){
+
+    $('#search').keyup(function(){ 
+        var query = $(this).val();
+        if(query != '')
+        {
+           
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+            url:"{{ route('autocomplete.fetch') }}",
+            method:"POST",
+            data:{query:query, _token: '{{csrf_token()}}'},
+            success:function(data){
+                $('#products').fadeIn();  
+                        $('#products').html(data);
+                }
+            });
+        }
+    });
+
+   $(document).on('click', 'li', function(){  
+       $('#search').val($(this).text());  
+       $('#products').fadeOut();  
+   }); 
+   
+   $("#search").focusout(function () {
+        $("#products").hide();
+    });
+
+});
+
+
+
+</script>
+
+@endsection

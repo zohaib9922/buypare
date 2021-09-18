@@ -17,6 +17,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all"> <!-- carousel slider -->  
 <link rel="icon" type="image/png" href="images/fav-icon.jpeg" sizes="96x96">
 <!-- //Custom Theme files -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
@@ -32,7 +33,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	$(window).load(function() {
 	  $('.flexslider').flexslider({
 		animation: "slide",
-		controlNav: "thumbnails"
+		controlNav: "thumbnails",
+		direction: "vertical"
 	  });
 	  let accordion = document.querySelector('.accordion-list');
 let items = accordion.querySelectorAll('li');
@@ -293,7 +295,8 @@ function toggleAccordion(){
 		<div class="container">  
 			<div class="single-page">
 				<div class="single-page-row" id="detail-21">
-					<div class="col-md-6 single-top-left">	
+					<h3 class="item_name product-title-detail">Electric Snow Blower</h3>
+					<div class="col-md-2 single-top-left">	
 						<div class="flexslider">
 							<ul class="slides">
 								<li data-thumb="images/s1.jpg">
@@ -308,9 +311,9 @@ function toggleAccordion(){
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-6 single-top-right">
-						<h3 class="item_name">Electric Snow Blower</h3>
-						<p>Processing Time: Item will be shipped out within 2-3 working days. </p>
+					<div class="col-md-5 single-top-right">
+						
+						{{-- <p>Processing Time: Item will be shipped out within 2-3 working days. </p>
 						<div class="single-rating">
 							<ul>
 								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -330,20 +333,71 @@ function toggleAccordion(){
 								<li>Ends on: June,5th</li>
 								<li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i> Coupon</a></li>
 							</ul>	
-						</div> 
+						</div>  --}}
 						<p class="single-price-text">Fusce a egestas nibh, eget ornare erat. Proin placerat, urna et consequat efficitur, sem odio blandit enim, sit amet euismod turpis est mattis lectus. Vestibulum maximus quam et quam egestas imperdiet. In dignissim auctor viverra. </p>
-						<form action="#" method="post">
+						<ul class="detail-ul">
+							<li><img class="icons-detail" src="/images/store-icon.svg"><span>1 Seller at Lazada</span></li>
+							<li><img class="icons-detail" src="/images/hands.svg"><span>From <b>RM 43412.12</b></span></li>
+							<li><img class="icons-detail" src="/images/compare.svg"><span class="compare-title"><b>Compare 1 offer</b></span></li>
+						</ul>
+						
+							<div class="col-md-3 right-border">
+								<p>Screen Size</p>
+								<p><b>15.6</b></p>
+							</div>
+							<div class="col-md-3 right-border">
+								<p>OS</p>
+								<p><b>Windows 10</b></p>
+							</div>
+							<div class="col-md-3 right-border">
+								<p>Battery Life</p>
+								<p><b>15h</b></p>
+							</div>
+							<div class="col-md-3">
+								<p>Keyboard</p>
+								<p><b>Yes</b></p>
+							</div>
+						
+						
+						{{-- <form action="#" method="post">
 							<input type="hidden" name="cmd" value="_cart" />
 							<input type="hidden" name="add" value="1" /> 
 							<input type="hidden" name="w3ls_item" value="Snow Blower" /> 
 							<input type="hidden" name="amount" value="540.00" /> 
 							<button type="button" class="w3ls-cart" ><i class="fa fa-table" aria-hidden="true"></i> Show Comparisons</button>
-						</form>
+						</form> --}}
 						<button class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Visit Store</button>
 					</div>
+
+					<div class="col-md-3 pd-0 custom-wd">
+						<div class="card float-right">
+							<div class="row">
+							  <div class="col-sm-12">
+								<div class="card-block">
+								  <p><span class="company-icon card-icon"><img src="/images/Lazada-icon.svg"></span></p>
+								  </br>
+								  <div class="row">
+									<div class="col-md-5">
+										<p><b>Rating:</b> 5.0</p>
+										<p><i class="fa fa-map-marker" aria-hidden="true"></i>  Local</p>
+										<br>
+									</div>
+									<div class="col-md-7 mrm">
+										<h3><b>RM 6,369.25</b></h3>
+									</div>
+								  </div>
+								  <a href="#" class="btn store-btn btn-primary btn-sm float-right">Go to Store > </a>
+								</div>
+							  </div>
+					   
+							</div>
+						  </div>
+						</div>
+					</div>
+					
 				   <div class="clearfix"> </div>  
 				</div>
-				<div class="single-page-icons social-icons"> 
+				{{-- <div class="single-page-icons social-icons"> 
 					<ul>
 						<li><h4>Share on</h4></li>
 						<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
@@ -352,10 +406,10 @@ function toggleAccordion(){
 						<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
 						<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
 					</ul>
-				</div>
+				</div> --}}
 			</div> 
-			<div class="container">
-				<div class="img-container flex-column-center">
+			<div class="container top-margin">
+				{{-- <div class="img-container flex-column-center">
 			
 				<div class="accordion-container flex-column-center">
 				  
@@ -371,7 +425,8 @@ function toggleAccordion(){
 						{{-- <div class="col-md-3">
 							<img src="images/s2.jpg" data-imagezoom="true" class="img-responsive" alt="" draggable="false">
 						</div> --}}
-						<div class="col-md-12">
+						
+						{{-- <div class="col-md-12">
 
 							
 								<p style="width:30%; float:left;"> 
@@ -398,7 +453,61 @@ function toggleAccordion(){
 				  <svg width="191" height="184" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter x="-97.9%" y="-76.3%" width="295.8%" height="313.7%" filterUnits="objectBoundingBox" id="a"><feOffset dy="25" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="25" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.209139076 0 0 0 0 0.0691446444 0 0 0 0 0.478091033 0 0 0 0.497159091 0" in="shadowBlurOuter1"/></filter><path id="b" d="M0 27.756v53.87l41.968 24.035 47.387-28.025v-53.87"/></defs><g fill="none" fill-rule="evenodd"><g transform="translate(50.93 2.125)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#FF9271" xlink:href="#b"/></g><path fill="#DF5C34" fill-rule="nonzero" d="M92.899 53.917v53.87l47.387-28.026v-53.87z"/><path fill="#F47B56" fill-rule="nonzero" d="M50.93 29.88L99.624 2.126l40.662 23.767-47.387 28.025z"/><path d="M94.013 14.49a25.942 25.942 0 0114.207 3.129c2.486 1.462 3.844 2.988 4.036 4.579.192 1.59-.628 2.975-2.562 4.143a9.115 9.115 0 01-2.985 1.18c-.869.205-1.76.295-2.652.269l-.974-.077c.091.217.151.446.18.68a3.132 3.132 0 01-.513 1.552 5.704 5.704 0 01-2.1 2.065 12.633 12.633 0 01-6.7 1.77 13.247 13.247 0 01-6.957-1.757c-1.999-1.18-3.023-2.566-3.1-4.156a4.49 4.49 0 012.562-4.015 8.488 8.488 0 012.357-1.013 9.175 9.175 0 012.037-.346h.705l-1.282-.77 3.6-2.244 8.34 4.912a4.377 4.377 0 004.15 0c1.769-1.103 1.137-2.552-1.895-4.348a19.261 19.261 0 00-10.556-2.347 21.67 21.67 0 00-11.018 3.168c-3.023 1.89-4.522 4.143-4.496 6.76 0 2.564 1.601 4.848 4.714 6.682a21.015 21.015 0 0011.146 2.655 20.926 20.926 0 0011.017-2.925 12.353 12.353 0 003.062-2.565 5.683 5.683 0 001.28-2.18l.18-.808 4.753.269c.008.145.008.29 0 .436a8.216 8.216 0 01-.346 1.154 8.303 8.303 0 01-.82 1.72 11.912 11.912 0 01-1.69 2 15.952 15.952 0 01-2.755 2.13 25.602 25.602 0 01-9.326 3.36 35.176 35.176 0 01-10.877.192 24.896 24.896 0 01-9.339-3.053 12.127 12.127 0 01-5.304-5.566 8.192 8.192 0 010-6.593 12.692 12.692 0 015.266-5.759 28.966 28.966 0 0114.655-4.284zm4.663 13.262c-.17-.891-.77-1.64-1.601-2.001a6.579 6.579 0 00-3.33-.911 5.619 5.619 0 00-3.101.795 2.283 2.283 0 00-1.281 2.001c.117.89.69 1.654 1.512 2.014a6.54 6.54 0 003.394.86 6.092 6.092 0 003.254-.847 2.065 2.065 0 001.205-1.911" fill="#3E2928" fill-rule="nonzero"/></g></svg>
 				</figure> -->
 			  
-			  </div>
+			  </div> --}} 
+			  <h3 class="w3ls-title">Compare</h3>
+			  <div class="col-md-12 pd-0">
+				<div class="card float-right">
+					<div class="row">
+					  <div class="col-sm-12">
+						
+						<div class="card-block compare-card">
+							<div class="col-md-3 mt-10">
+								<p><span class="company-icon card-icon"><img src="/images/Lazada-icon.svg"></span></p>
+								</br>
+								<div class="row">
+									<p><b>Apple Iphone Se (64Gb/128Gb/256Gb) Malaysia  Warranty 1 Year (Imported Set) Black,64GB</b></p>
+								</div>
+								
+							</div>
+							<div class="col-md-3">
+								<div class="row">
+									<div class="cN"> <div class="w-10-l sprite-icons cI i-delivery-truck mt01r mt01r-l"></div> <div class="cG w-90-l u"> <p><i class="fa fa-truck" aria-hidden="true"></i><span> From RM 4</span></p><p><span>1-7 working days</span></p><p><span>Express delivery available</span></p><p></p> </div> </div>
+									<div class="cN"> <div class="w-10-l sprite-icons cI i-delivery-truck mt01r mt01r-l"></div> <div class="cG w-90-l u"> <p><i class="fa fa-credit-card-alt" aria-hidden="true"></i> <span> From RM 4</span></p><p><span>1-7 working days</span></p><p><span>Express delivery available</span></p><p></p> </div> </div>
+								</div>
+							</div>
+							<div class="col-md-3 rm-section">
+								<div class="row">
+									<div class="col-md-12">
+									</br>
+								</br>
+							
+										<h3><b>RM 6,369.25</b></h3>
+									</br>
+										<p><b class="inside-b">Rating:</b> 5.0</p>
+										<p><i class="fa fa-map-marker" aria-hidden="true"></i>  Local</p>
+										<br>
+									</div>
+								  </div>
+								
+							</div>
+
+							<div class="col-md-3">
+								<div class="row">
+								</br>
+							</br>
+						</br>
+									<a href="#" class="btn store-btn btn-primary btn-sm float-right">Go to Store > </a>
+								  </div>
+								
+							</div>
+
+						<div>
+					  </div>
+			   
+					</div>
+				  </div>
+				</div>
+			</div>
 			  
 			<!-- recommendations -->
 			<div class="recommend">

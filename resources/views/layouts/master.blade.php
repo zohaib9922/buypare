@@ -14,12 +14,14 @@
         <link href="css/animate.min.css" rel="stylesheet" type="text/css" media="all" /> 
         <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all"> <!-- carousel slider -->  
         <link href="css/mb-min.css" rel="stylesheet" type="text/css" media="all"> 
+        <link href="css/products-list.css" rel="stylesheet" type="text/css" media="all"> 
         
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="{!! asset('/css/mb.css') !!}" rel="stylesheet"><!-- carousel slider -->  
         <link href="{!! asset('/css/mbs.css') !!}" rel="stylesheet"><!-- carousel slider -->
         <link href="{!! asset('/css/mbpro.css') !!}" rel="stylesheet"><!-- carousel slider -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- //Custom Theme files -->
         <!-- font-awesome icons -->
         <link href="css/font-awesome.css" rel="stylesheet"> 
@@ -76,6 +78,7 @@
         <!-- start-smooth-scrolling -->
         <script type="text/javascript" src="js/move-top.js"></script>
         <script type="text/javascript" src="js/easing.js"></script>	
+        <script type="text/javascript" src="js/typehead.js"></script>
         <script type="text/javascript">
                 jQuery(document).ready(function($) {
                     $(".scroll").click(function(event){		
@@ -84,6 +87,7 @@
                     });
                 });
         </script>
+        
         <!-- //countdown.js -->
 	    <!-- menu js aim -->
 	    <script src="js/jquery.menu-aim.js"> </script>
@@ -107,6 +111,7 @@
             </script>
             <!-- //smooth-scrolling-of-move-up -->
         <script src="js/bootstrap.js"></script>	
+        {{-- <script type="text/javascript" src="js/ajax.js"></script>	 --}}
         <script data-ad-client="ca-pub-8128676451831979" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
         <style>
