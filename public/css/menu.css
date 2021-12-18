@@ -55,7 +55,7 @@
   transform: rotate(-45deg);
 }
 .cd-dropdown-content a:hover {
-    color: #fff;
+    color: #6495ed;
 }
 @media only screen and (min-width: 1024px) {
   .cd-dropdown-trigger {

@@ -125,7 +125,7 @@ ul.cd-dropdown-content li {
     margin: 1.1em 0 0;
 }
 .header-two {
-    padding: 2em 0; 
+    padding: 1em 0;
 	position: relative;
 }
 .header-logo {
@@ -876,15 +876,54 @@ p {
     height: 894px;
 
 }
+.wrap-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-content h3{
+    line-height: 1.5;
+}
 .footer-info li{
     text-align: left !important;
 }
 .card-block{
     background-color: #80808017;
 }
+.com .card-block{
+    box-shadow: 1px 2px 14px #ccc;
+    border-radius: 0px;
+    padding: 20px;
+    background-color: #fff;
+    border-top:5px solid #337ab7;
+
+}
+.right-l-border{
+    border-right: 1px solid #a0939359;
+    border-left: 1px solid #a0939359;
+    
+}
+.mb-2{
+    margin-bottom: 2%;
+}
+.b-right{
+    border-right: 1px solid #a0939359;
+    height: 166px;
+    padding-left: 59px;
+}
 .products
 {
+    padding-top: 23px;
     padding-bottom: 0 !important;
+}
+.compare-btn{
+    width: 70% !important;
+    margin-left: 50px !important;
+    border-radius: 130px !important;
+}
+.compare-btn:hover{
+    background-color: transparent;
+    border: 1px solid #2e6da4;
+    color: #2e6da4;
 }
 .compare-card{
     margin-bottom: 26px;
@@ -1069,7 +1108,7 @@ p {
 /*-- //social-icons --*/ 
 /*-- footer --*/
 .footer {
-    padding-top: 5em;
+    padding-top: 4em;
     background: url(../images/bg.png) no-repeat;
     background-color: #043680;
     background-size: cover;
@@ -1079,36 +1118,30 @@ p {
     text-align: center;
 }
 .address-left {
-    background: #fff;
+
     padding: 2em;
+    padding-top: 0;
+
     z-index: 9;
 }
 .address-right{
 	position:relative;	
 }
-.address-right:before {
-    content: '';
-    background: url(../images/a1.png)no-repeat 0px 0px;
-    background-size: 100%;
-    display: block;
-    position: absolute;
-    bottom: -189px;
-    left: -36px;
-    width: 500px;
-    height: 155px;
-    z-index: 0;
-}
+
 .address-left ul li {
     display: block;
     margin: 1em 0;
     font-size: 1em;
-    color: #555;
+    color: #fff;
     border-top: 1px solid #e6e2e2;
     padding-top: 1em;
     text-align: center;
 }
 .address-left ul li a{ 
-    color: #000;
+    color: #fff;
+}
+footer .fa-map-marker {
+    color: #fff !important;
 }
 .address-left ul li a:hover {
     color: #3c9de8;
@@ -1116,6 +1149,7 @@ p {
 .address-left ul li i.fa {
     margin-right: 5px;
     font-size: 1.3em;
+    color: #fff !important;
 }
 .footer h3 {
     font-size: 1.4em;
@@ -1124,6 +1158,12 @@ p {
     margin-bottom: 1em;
     text-transform: uppercase;
 } 
+.header .top {
+    display: none;
+}
+.header.home .top{
+    display: block;
+}
 .footer-grids ul li {
     display: block;
     font-size: 1em;
@@ -1146,11 +1186,11 @@ p {
 }
 .copy-right {
     text-align: center;
-    padding: 2em 0;
+    padding: 10px 0;
     background: #222;
 }
 .copy-right p {
-    font-size: 1em;
+    font-size: 13px;
     color: #fff;
     font-weight: 300;
 	line-height:1.8em;
@@ -1196,7 +1236,7 @@ p {
     border-top: 60px solid #0280e1;
     border-right: 60px solid transparent;
     position: absolute;
-    top: 0;y
+    top: 0;
     left: 0;
 	-webkit-transition: .5s all;
 	-moz-transition: .5s all;
@@ -1204,10 +1244,19 @@ p {
 	-ms-transition: .5s all;
 	transition: .5s all;
 }
+#owl-demo5 .owl-carousel .owl-item{
+    width: 25% !important;
+}
+a.store-btn{
+    padding: 11px;
+    font-size: 12px;
+    border-radius: 8px;
+}
 .agile-products img{
     background-color: #80808054;
     padding: 10px;
 }
+
 .agile-products{
     border: 0 !important;
     padding:0 !important;
@@ -1312,6 +1361,49 @@ p {
 }
 .agile-product-text h5 a {
     color: #0280e1; 
+}
+.comparision-row .compare-btn{
+    background-color: transparent;
+    color: #337ab7;
+    width: 83% !important;
+    margin-left: 28px !important;
+    font-size: 14px;
+}
+.autocomplete{
+    width: 100% !important;
+}
+#myInputautocomplete-list{
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+}
+#myInputautocomplete-list div{
+    padding: 10px 0;
+    font-size: 15px;
+}
+.dropdown-menu{
+    width: 621px;
+    padding: 20px 0;
+    padding-top: 0;
+}
+h3.item_name.product-title-detail{
+    line-height: 1.5;
+}
+.fa.fa-star{
+    color: orange;
+    margin-right: 6px;
+}
+.fa.fa-map-marker{
+    margin-right: 7px;
+        color: black;
+}
+.comparision-row .compare-btn.active-class{
+    color: #fff !important; 
+    background-color: #337ab7 !important;
+    border-color: #2e6da4 !important;
+    font-weight: bold !important;
 }
 .agile-product-text h5 a:hover ,.related-row h4 a:hover{
     color: #000;
@@ -2258,7 +2350,7 @@ h5.sitemap-text-title {
     margin-left: 0 !important;
 }
 .w-90-l{
-    margin-left: 78px;
+    margin-left: 66px;
     margin-bottom: 9px;
 }
 .custom-wd{
@@ -4123,6 +4215,7 @@ h3.w3ls-title.w3ls-title1 {
     float: none;
     width: 100%;
 }
+
 .footer-grids:nth-child(2) {
     margin: 1em 0;
 }

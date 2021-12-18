@@ -12,12 +12,7 @@
                 <li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
                 <li><a href="#" class="fa fa-rss icon rss"> </a></li> 
             </ul> 
-            <ul class="apps"> 
-                <li><h4>Download Our app : </h4> </li>
-                <li><a href="#" class="fa fa-apple"></a></li>
-                <li><a href="#" class="fa fa-windows"></a></li>
-                <li><a href="#" class="fa fa-android"></a></li>
-            </ul> 
+            
         </div> 
         <div class="col-md-6 subscribe-right">
             <h4>Sign up for email and get 25%off!</h4>  
@@ -37,7 +32,7 @@
         <div class="footer-info w3-agileits-info">
             <div class="col-md-4 address-left agileinfo">
                 <div class="footer-logo header-logo">
-                    <a href="index.html"><img src="images/logo.png"</a>
+                    <h3>Keep In Touch</h3>
                 </div>
                 <ul>
                     <li><i class="fa fa-map-marker"></i> 123 San Sebastian, New York City USA.</li>
@@ -47,7 +42,9 @@
                 </ul> 
             </div>
             <div class="col-md-8 address-right">
-                <div class="col-md-4 footer-grids">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-5 footer-grids">
                     <h3>Company</h3>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
@@ -56,7 +53,7 @@
                         <li><a href="privacy.html">Privacy Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 footer-grids">
+                <div class="col-md-5 footer-grids">
                     <h3>Services</h3>
                     <ul>
                         <li><a href="{{ route('contact') }}">Contact Us</a></li>
@@ -89,6 +86,6 @@
 <!-- //footer -->		
 <div class="copy-right"> 
     <div class="container">
-        <p>© 2021 BuyPare . All rights reserved | Design by Team Pr0-Techs</p>
+        <p>© 2021 BuyPare . All rights reserved </p>
     </div>
 </div> 

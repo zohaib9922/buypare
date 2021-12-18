@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('title') Home @endsection
 @section('content')
+
 <div class="banner">
     <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
         <!-- Wrapper-for-Slides -->
@@ -40,9 +41,11 @@
     </div>
     <script src="js/custom.js"></script>
 </div>
+
 <!-- //banner -->  
 <!-- welcome -->
 <div class="welcome"> 
+   
     <div class="container"> 
         <div class="welcome-info">
             <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
@@ -107,13 +110,16 @@
     <div class="container"> 
         <h3 class="w3ls-title">DEALS OF THE DAY </h3>
         <div class="deals-row">
-            <div class="col-md-3 focus-grid"> 
-                <a href="/products" class="wthree-btn"> 
-                    <div class="focus-image"><i class="fa fa-mobile"></i></div>
-                    <h4 class="clrchg">Mobiles</h4> 
-                </a>
-            </div>
-            <div class="col-md-3 focus-grid"> 
+            @foreach ($catData as $Data)
+                <div class="col-md-3 focus-grid"> 
+                    <a href="{{ $Data }}/products" class="wthree-btn"> 
+                        <div class="focus-image"><i class="fa fa-mobile"></i></div>
+                        <h4 class="clrchg">{{ $Data }}</h4> 
+                    </a>
+                </div>    
+            @endforeach
+            
+            {{-- <div class="col-md-3 focus-grid"> 
                 <a href="/products" class="wthree-btn wthree1"> 
                     <div class="focus-image"><i class="fa fa-laptop"></i></div>
                     <h4 class="clrchg"> Electronics & Appliances</h4> 
@@ -190,7 +196,7 @@
                     <div class="focus-image"><i class="fa fa-gift"></i></div>
                     <h4 class="clrchg">Gifts</h4> 
                 </a>
-            </div> 
+            </div>  --}}
             <div class="clearfix"> </div>
         </div>  	
     </div>  	

@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Arr;
+use App\Models\NewProducts;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(SearchRepository::class, EloquentSearchRepository::class);
     }
 
     /**
@@ -23,6 +26,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $categories = NewProducts::all();
+        foreach($categories as $category){
+            $catData[] = $category->Category;
+        } 
+        $catData = array_unique($catData);
+        $catData = array_values($catData);
+        $catData = Arr::sort($catData);
+        View::share('includes.header',$catData);  
     }
 }

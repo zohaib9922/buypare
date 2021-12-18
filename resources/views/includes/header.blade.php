@@ -1,65 +1,32 @@
+
 <div class="header {{ Route::currentRouteName() }}">
-    {{-- <div class="w3ls-header"><!--header-one--> 
-        <div class="w3ls-header-left">
-            <p><a href="#">UPTO $50 OFF ON LAPTOPS | USE COUPON CODE LAPPY </a></p>
-        </div>
-        <div class="w3ls-header-right">
-            <ul>
-                <li class="dropdown head-dpdn">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i> My Account<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="login.html">Login </a></li> 
-                        <li><a href="signup.html">Sign Up</a></li> 
-                        <li><a href="login.html">My Orders</a></li>  
-                        <li><a href="login.html">Wallet</a></li> 
-                    </ul> 
-                </li> 
-                <li class="dropdown head-dpdn">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-percent" aria-hidden="true"></i> Today's Deals<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="offers.html">Cash Back Offers</a></li> 
-                        <li><a href="offers.html">Product Discounts</a></li>
-                        <li><a href="offers.html">Special Offers</a></li> 
-                    </ul> 
-                </li> 
-                <li class="dropdown head-dpdn">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gift" aria-hidden="true"></i> Gift Cards<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="offers.html">Product Gift card</a></li> 
-                        <li><a href="offers.html">Occasions Register</a></li>
-                        <li><a href="offers.html">View Balance</a></li> 
-                    </ul> 
-                </li> 
-                <li class="dropdown head-dpdn">
-                    <a href="/products" class="dropdown-toggle"><i class="fa fa-map-marker" aria-hidden="true"></i> Store Finder</a>
-                </li> 
-                <li class="dropdown head-dpdn">
-                    <a href="card.html" class="dropdown-toggle"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Credit Card</a>
-                </li> 
-                <li class="dropdown head-dpdn">
-                    <a href="help.html" class="dropdown-toggle"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
-                </li>
-            </ul>
-        </div>
-        <div class="clearfix"> </div> 
-    </div> --}}
+    <div class="top">
+        <img src="images/9.png" alt="" class="img-responsive" />
+    </div>
+    <span id="add"><i class="fa fa-times cross-icon" aria-hidden="true"></i></span>
+
     <div class="header-two"><!-- header-two -->
+        
         <div class="container">
+            
             <div class="header-logo">
-                <a href="{{ route('home') }}"><img src="images/logo.png"></a>
+                <a href="{{ route('home') }}"><img src="/images/logo.png"></a>
             </div>	
             <div class="header-search">
-                <form action="#" method="post">
-                    <input id="search" type="search" name="search" placeholder="Search for a Product..." required="">
-                    <div id="products">
+                <form action="search" method="Post" enctype="multipart/form-data">
+                    <div class="autocomplete" >
+                        @csrf
+                        <input id="search" onfocusin="NewFunction()" onfocusout="myFunction()" type="search" class="typeahead" name="search" placeholder="Search for a Product..." required="">
                     </div>
-                    <button type="submit" class="btn btn-default" aria-label="Left Align">
-                        <i class="fa fa-search" aria-hidden="true"> </i>
-                    </button>
+                        <div id="products">
+                        </div>
+                        <button type="submit" class="btn btn-default" aria-label="Left Align">
+                            <i class="fa fa-search" aria-hidden="true"> </i>
+                        </button>
+                    </div>
                 </form>
                 <div id="searchbox-overlay" class="db ei eK eo eA hm ra" [class]="autoSuggestState.show? 'db ei eK eo eA hm ra': 'dn ei eK eo eA hm ra'" role="button" tabindex="0" on="tap:AMP.setState({'autoSuggestState':{ show: false }});" i-amphtml-binding=""></div>
-            </div>
-            <div class="header-cart"> 
+                 <div class="header-cart"> 
                 <div class="my-account">
                     <a href="/contact-us"><i class="fa fa-map-marker" aria-hidden="true"></i> CONTACT US</a>						
                 </div>
@@ -71,8 +38,10 @@
                     -->	
                 </form>  
                 </div>
-                <div class="clearfix"> </div> 
+                
             </div> 
+            </div>
+           
             <div class="clearfix"> </div>
         </div>		
     </div><!-- //header-two -->
@@ -84,8 +53,11 @@
                     <nav class="cd-dropdown"> 
                         <a href="#0" class="cd-close">Close</a>
                         <ul class="cd-dropdown-content"> 
-                            <li><a href="offers.html">Today's Offers</a></li>
-                            <li class="has-children">
+                            @foreach ($catData as $Data )
+                                <li><a href="{{$Data}}/products">{{ $Data  }}</a></li>    
+                            @endforeach
+                            
+                            {{-- <li class="has-children">
                                 <a href="#">Electronics</a> 
                                 <ul class="cd-secondary-dropdown is-hidden">
                                     <li class="go-back"><a href="#">Menu</a></li>
@@ -929,14 +901,14 @@
                                         </ul>
                                     </li> 
                                 </ul><!-- .cd-secondary-dropdown --> 
-                            </li> 
+                            </li>  --}}
                         </ul> <!-- .cd-dropdown-content -->
                     </nav> <!-- .cd-dropdown -->
                 </div> <!-- .cd-dropdown-wrapper -->	 
             </div>
             <div class="move-text">
                 <div class="marquee"><a href="#"> BuyPare Presents New collections here...... <span>Get extra 10% off on everything Just bu signing in </span> <span> BuyPare provides a comprehensive analysis and comparison of millions of Products</span> <span> BuyPare includes prodcucts from Shoppe , Lazada and Many more websites</span> </a></div>
-                    <script type="text/javascript" src="js/jquery.marquee.min.js"></script>
+                    <script type="text/javascript" src="/js/jquery.marquee.min.js"></script>
                     <script>
                     $('.marquee').marquee({ pauseOnHover: true });
                     //@ sourceURL=pen.js
@@ -945,49 +917,74 @@
         </div>
     </div>
 </div>
+
 @section('jsContent')
 
+
+
 <script>
-    
+
  $(document).ready(function(){
 
-    $('#search').keyup(function(){ 
-        var query = $(this).val();
-        if(query != '')
-        {
-           
-            var _token = $('input[name="_token"]').val();
-            $.ajax({
-            url:"{{ route('autocomplete.fetch') }}",
-            method:"POST",
-            data:{query:query, _token: '{{csrf_token()}}'},
-            success:function(data){
-                $('#products').fadeIn();  
-                        $('#products').html(data);
-                }
-            });
-        }
-    });
+
 
    $(document).on('click', 'li', function(){  
        $('#search').val($(this).text());  
        $('#products').fadeOut();  
    }); 
+
    
-   $("#search").focusin(function () {
-        $("body").css({"background-color": "#999999"});
-        $("#products").css({"visibility": "visibleyy"});
+   
+   $("#add").click(function(){
+        $(".top").css('display','none');
     });
 
-    $("#search").focusout(function () {
-        $("body").css({"background-color": "transparent"});
-        $("#products").css({"visibility": "hidden"});
-    });
+    // $("#search").focusout(function () {
+    //     $("body").css({"background-color": "transparent"});
+    //     $("#products").css({"visibility": "hidden"});
+    // });
+
+    // $("#search").focusin(function () {
+    //     $("body").css({"background-color": "#999999"});
+    //     $("#products").css({"visibility": "visibleyy"});
+    // });
+
+    $('#search').on('keyup',function() {
+        var query = $(this).val(); 
+        $.ajax({
+        
+            url:"{{ route('autocomplete') }}",
     
+            type:"GET",
+        
+            data:{'search':query},
+        
+            success:function (data) {
+                $('#products').html(data);
+            }
+        })
+        // end of ajax call
+    });
+
+    
+    $(document).on('click', 'li', function(){
+    
+        var value = $(this).text();
+        $('#country').val(value);
+        $('#country_list').html("");
+    });
+   
 });
 
+function myFunction(){
+        $("#products").css('display','none');
+    }
 
+    function NewFunction(){
+        $("#products").css('display','block');
+    }
 
+    
 </script>
 
 @endsection

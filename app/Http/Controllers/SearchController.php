@@ -4,53 +4,82 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
+use App\Models\NewProducts;
+use App\Models\SearchTags;
+use Elasticsearch;
+
 
 class SearchController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('pages.index');
+        $search = $request->search;
+        $products = NewProducts::where('Category', 'LIKE', "%{$search}%")->paginate(50);
+        $categories = NewProducts::all();
+        foreach($categories as $category){
+            $catData[] = $category->Category;
+        } 
+        $catData = array_unique($catData);
+        $catData = array_values($catData);
+        return view('search.products',compact('products','catData'));
+    }
+
+    public function price(Request $request)
+    {
+        $search = '$'.$request->price;
+        
+        $products = NewProducts::where('Field6','<',$search)->where('Field6', '!=', '')
+        ->orderByRaw("(Field6 = '{$search}') desc, length(Field6)")
+        ->limit(10)->get();
+        $categories = NewProducts::all();
+        foreach($categories as $category){
+            $catData[] = $category->Category;
+        }
+        $catData = array_unique($catData);
+        $catData = array_values($catData);
+        return view('search.products',compact('products','catData'));
     }
     
-    public function fetch(Request $request)
-    {
-        // $search = $request->get('term');
-        // $data = product::where('Title', 'LIKE', "%{$search}%")->get();
-       
-        // return response()->json($data);
-        if($request->get('query'))
-        {
-         $query = $request->get('query');
-         $data = product::where('Title', 'LIKE', "%{$query}%")->get();
-         $output = '<ul class="dropdown-menu" style="display:block; position:relative">
-         <li class="search-suggestion"><b>Popular Products</b></li>
-         ';
-         foreach($data as $row)
-         {
-            if(!empty($output)){
-                $output .= '
-                <li class="search-listing">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <img class="search-image" src="/images/search-img.jpeg">
-                        </div>
-                        <div class="col-md-9 flex-title">
-                            <a href="'.$row->Title_URL.'">'.$row->Title.'</a>
-                        </div>
-                        <div class="col-md-2">
-                            <span>'.$row->Column_1d9_77.'</span>
-                        </div>
-                    </div>
-                </li>
-                ';
+    
+
+    public function autocomplete(Request $request){
+        
+        if($request->ajax()) { 
+            
+            $query = $request->search;
+            $number  = strlen($query);
+            
+            $data = NewProducts::where('Category', 'LIKE',  $query.'%')->get();
+ 
+            foreach($data as $category){
+                $catData[] = $category->Category;
+            } 
+
+            $catData = array_unique($catData);
+            $catData = array_values($catData);
+            
+
+            $output = '';
+        
+            if (count($data)>0) {
+            
+                $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
+                foreach ($catData as $row){
+                    $output .= '<li class="list-group-item">'.$row.'</li>';
+                    
+                }
+            
+                $output .= '</ul>';
             }
-         }
-         $output .= '</ul>';
-         if(!empty($output)){
-            echo $output;
-         }
+            else {
+            
+                $output .= '<li class="list-group-item">'.'No results'.'</li>';
+            }
+
+            return $output;
         }
+        
     }
    
 }

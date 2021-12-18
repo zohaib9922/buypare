@@ -26,13 +26,18 @@ Route::get('/coming-soon',[HomeController::class,'commingsoon'])->name('home');
 Route::get('/contact-us',[PagesController::class,'index'])->name('contact');
 Route::get('/cart',[CartController::class,'index'])->name('cart');
 Route::get('/products',[ProductsController::class,'index']);
-Route::get('/product-detail',[ProductsController::class,'productDetail']);
+
+Route::get('/display-moreproducts',[ProductsController::class,'DisplayMoreProducts']);
+
+Route::get('/{category}/products',[ProductsController::class,'ProductWithCat']);
+Route::get('/product-detail/{slug}',[ProductsController::class,'productDetail']);
 // Route::get('search',[SearchController::class,'result']);
 
 
 // Route::get('search', [SearchController::class, 'index'])->name('search');
 // Route::get('autocomplete', [SearchController::class, 'autocomplete'])->name('autocomplete');
 
-Route::get('/autocomplete',[SearchController::class, 'index'])->name('autocomplete');
-Route::post('/autocomplete/fetch',[SearchController::class, 'fetch'])->name('autocomplete.fetch');
+Route::post('/search',[SearchController::class, 'index'])->name('search');
+Route::post('/search-by-price',[SearchController::class, 'price'])->name('search-by-price');
+Route::get('/autocomplete',[SearchController::class, 'autocomplete'])->name('autocomplete');
 
