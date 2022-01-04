@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\NewProducts;
 use App\Models\SearchTags;
+use App\Models\LazadaProducts;
+use App\Models\ShopeeProducts;
+use Illuminate\Support\Arr;
+
 use Elasticsearch;
 
 
@@ -15,30 +19,41 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $products = NewProducts::where('Category', 'LIKE', "%{$search}%")->paginate(50);
-        $categories = NewProducts::all();
+        $Lazaadaproducts = LazadaProducts::where('Category', 'LIKE', "%{$search}%")->paginate(50);
+        $products = ShopeeProducts::where('Category', 'LIKE', "%{$search}%")->paginate(50);
+        $categories = ShopeeProducts::all();
+        $categoriesLazada = LazadaProducts::all();
         foreach($categories as $category){
-            $catData[] = $category->Category;
+            $catData[] = $category->category;
         } 
+        foreach($categoriesLazada as $category){
+            $catData[] = $category->category;
+        }
         $catData = array_unique($catData);
         $catData = array_values($catData);
-        return view('search.products',compact('products','catData'));
+        $catData = Arr::sort($catData);
+        
+        return view('search.products',compact('Lazaadaproducts','catData','products'));
     }
 
     public function price(Request $request)
     {
         $search = '$'.$request->price;
         
-        $products = NewProducts::where('Field6','<',$search)->where('Field6', '!=', '')
+        $Lazaadaproducts = LazadaProducts::where('Field6','<',$search)->where('Field6', '!=', '')
         ->orderByRaw("(Field6 = '{$search}') desc, length(Field6)")
         ->limit(10)->get();
-        $categories = NewProducts::all();
+        $categories = LazadaProducts::all();
+        $categoriesLazada = LazadaProducts::all();
         foreach($categories as $category){
-            $catData[] = $category->Category;
+            $catData[] = $category->category;
+        } 
+        foreach($categoriesLazada as $category){
+            $catData[] = $category->category;
         }
         $catData = array_unique($catData);
         $catData = array_values($catData);
-        return view('search.products',compact('products','catData'));
+        return view('search.products',compact('Lazaadaproducts','catData'));
     }
     
     
@@ -50,7 +65,7 @@ class SearchController extends Controller
             $query = $request->search;
             $number  = strlen($query);
             
-            $data = NewProducts::where('Category', 'LIKE',  $query.'%')->get();
+            $data = LazadaProducts::where('Category', 'LIKE',  $query.'%')->get();
  
             foreach($data as $category){
                 $catData[] = $category->Category;

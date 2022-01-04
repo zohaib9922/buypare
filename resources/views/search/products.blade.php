@@ -139,69 +139,111 @@
 						
 					</div>
 				</div>
-                <div class="wrap-flex products-container col-sm-9">
+                <div style="justify-content: center;" class="wrap-flex products-container col-sm-9">
+                    {{-- @if ($count/2 == 0) --}}
                     <div class="wrapper">
-                        {{-- <ul id="results"><!-- Products all appear here part of the ul li --></ul> --}}
-                        @foreach ($products as $product) 
-                            @php
-                                $title = $product->Field1;
-                            @endphp
-                            
-                            <div class="col-md-3 lazy product-colum col-sm-6">
+                       @php
+                          $data = $Lazaadaproducts->merge($products);
+                          $shuffled = $data->shuffle();
+                          
+                       @endphp
+                       @foreach ($shuffled as $product) 
+                             <div class="col-md-3 lazy product-colum col-sm-6">
                                 <div class="product-grid3">
-                                    <div class="product-image3">
-                                        <a href="/product-detail/{{ $title }}">
-                                            <img class="pic-1" src="{{ $product->Image_URL }}">
-                                            <img class="pic-2" src="{{ $product->Image_URL }}">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="/product-detail/'.$title.'"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">New</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="/product-detail/'.$title.'"><b> {{ $title }}</b></a></h3>
-                                        @if(!empty($product->Field6))
-                                            <span style="display:block; margin-bottom:10px;" class="specifications-1"> {{ $product->Field6 }}</span>
-                                        @endif
-                                        @if(!empty($product->Category))
-                                            <span style="display:block; margin-bottom:10px;" class="specifications-1">Category: {{ $product->Category }}</span>
-                                        @endif
-                                        <div class="location-span">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i><span class="location">{{ $product->Text1 }}</span>
-                                            <span class="company-icon"><img src="/images/Lazada-icon.svg"></span>
-                                        </div>
-                                    </div>
+                                   <div class="product-image3">
+                                   @if(!empty($product->product_title))
+                                      <a href="/product-detail/{{ $product->product_title }}">
+                                   @else
+                                      <a href="/product-detail/{{ $product->field_one }}">
+                                   @endif
+     
+                                   @if(!empty($product->image_url1))
+                                      <img class="pic-1" src="{{ $product->image_url1 }}">
+                                   @else
+                                   <img class="pic-1" src="{{ $product->image_url }}">
+                                   @endif
+     
+                                   @if(!empty($product->image_url2 ))
+                                      <img class="pic-2" src="{{ $product->image_url2 }}">
+                                   @elseif(!empty($product->image_url))
+                                      <img class="pic-2" src="{{ $product->image_url }}">
+                                   @endif
+     
+                                   </a>
+                                   <ul class="social">
+                                      @if(!empty($product->product_title))
+                                         <li><a href="/product-detail/{{ $product->product_title }}"><i class="fa fa-shopping-cart"></i></a></li>
+                                      @else
+                                         <li><a href="/product-detail/{{ $product->field_one }}"><i class="fa fa-shopping-cart"></i></a></li>
+                                      @endif
+                                   </ul>
+                                   </div>
+                                   <div class="product-content">
+                                      @if(!empty($product->product_title))
+                                         <h3 class="title"><a href="/product-detail/{{ $product->product_title }}"><b>{{ $product->product_title }}</b></a></h3>
+                                      @else
+                                         <h3 class="title"><a href="/product-detail/{{ $product->field_one }}"><b>{{ $product->field_one }}</b></a></h3> 
+                                      @endif
+     
+                                      @if(!empty($product->Price))
+                                         <span style="display:block; margin-bottom:10px;" class="specifications-1">{{ $product->price }}</span>
+                                      @else
+                                         <span style="display:block; margin-bottom:10px;" class="specifications-1">{{ $product->field_six }}</span>    
+                                      @endif
+     
+                                      @if(!empty($product->category))
+                                         <span style="display:block; margin-bottom:10px;" class="specifications-1">category: {{ $product->category }}</span>
+                                      @else
+                                         <span style="display:block; margin-bottom:10px;" class="specifications-1">category: {{ $product->category }}</span> 
+                                      @endif
+                                   <div class="location-span">
+                                      @if(!empty($product->category))                                 
+                                         <i class="fa fa-map-marker" aria-hidden="true"></i><span class="location">{{ $product->location }}</span>
+                                      @else
+                                         <i class="fa fa-map-marker" aria-hidden="true"></i><span class="location">{{ $product->prod_text }}</span>
+                                      @endif
+     
+                                      @if($product->getTable() == 'lazada_products')
+                                         <span class="company-icon"><img src="/images/Lazada-icon.svg"></span>
+                                      @else
+                                         <span class="company-icon"><img src="/images/shopee-icon.png"></span>
+                                      @endif
+                                   </div>
+                                   </div>
                                 </div>
-                            </div>
-                            
-                        @endforeach
-                        
-                        <div style="justify-content: center;" class="wrap-flex products-container col-sm-9">
-                            <div class="wrapper">
-        
-                                <div class="row" id="data_temp"></div>
-                                <div class="ajax-load text-center" style="display:none">
-                                <i class="mdi mdi-48px mdi-spin mdi-loading"></i> Loading ...
-                                </div>
-                                <div class="no-data text-center mb-4" style="display:none">
-                                <b>No data - last page</b>
-                                </div>
-                                    
-                                <div style="width: 100%" class="full-page-loading"><div class="auto-load text-center">
-                                    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        x="0px" y="0px" height="60" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-                                        <path fill="#000"
-                                            d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
-                                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s"
-                                                from="0 50 50" to="360 50 50" repeatCount="indefinite" />
-                                        </path>
-                                    </svg>
-                                </div></div>
+                             </div>                  
+                         @endforeach
+                         {{-- @foreach ($products as $product)                    
+                             <div class="col-md-3 lazy product-colum col-sm-6">
+                                 <div class="product-grid3">
+                                     <div class="product-image3">
+                                     <a href="/product-detail/{{ $product->field_one }}">
+                                     <img class="pic-1" src="{{ $product->Image_URL }}">
+                                     <img class="pic-2" src="{{ $product->Image_URL }}">
+                                     </a>
+                                     <ul class="social">
+                                         <li><a href="/product-detail/{{ $product->field_one }}"><i class="fa fa-shopping-cart"></i></a></li>
+                                     </ul>
+                                     </div>
+                                     <div class="product-content">
+                                     <h3 class="title"><a href="/product-detail/{{ $product->field_one }}"><b>{{ $product->field_one }}</b></a></h3>
+                                     <span style="display:block; margin-bottom:10px;" class="specifications-1">{{ $product->Field6 }}</span>
+                                     <span style="display:block; margin-bottom:10px;" class="specifications-1">category: {{ $product->category }}</span>
+                                     <div class="location-span">
+                                         <i class="fa fa-map-marker" aria-hidden="true"></i><span class="location">{{ $product->Text1 }}</span>
+                                         <span class="company-icon"><img src="/images/shopee-icon.png"></span>
+                                     </div>
+                                     </div>
+                                 </div>
                              </div>
+                         @endforeach
+                          --}}
+                         
+                    </div>
+                     <div class="pagination">
+                         {{ $products->links('pagination::bootstrap-4') }}
                      </div>
-                     
-            </div>
+                 </div>
         </div>
     </div>
 

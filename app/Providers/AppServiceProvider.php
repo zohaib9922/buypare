@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Arr;
-use App\Models\NewProducts;
+use App\Models\ShopeeProducts;
 use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,13 +26,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = NewProducts::all();
+        $categories = ShopeeProducts::all();
         foreach($categories as $category){
             $catData[] = $category->Category;
         } 
         $catData = array_unique($catData);
         $catData = array_values($catData);
         $catData = Arr::sort($catData);
+
         View::share('includes.header',$catData);  
     }
 }

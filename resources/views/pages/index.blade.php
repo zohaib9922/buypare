@@ -50,26 +50,24 @@
         <div class="welcome-info">
             <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                 <ul id="myTab" class=" nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" >
-                        <i class="fa fa-laptop" aria-hidden="true"></i> 
-                        <h5>Electronics</h5>
+                    <li><a href="/Audio/products" >
+                        <img src="/images/headphones.png"> 
+                        <h5>Audio</h5>
                     </a></li>
-                    <li role="presentation"><a href="#carl" role="tab" id="carl-tab" data-toggle="tab"> 
-                        <i class="fa fa-female" aria-hidden="true"></i>
-                        <h5>Fashion</h5>
+                    <li><a href="/Outerwear/products" >
+                        <img src="/images/outerwear.png"> 
+                        <h5>Outerwear</h5>
                     </a></li>
-                    <li role="presentation"><a href="#james" role="tab" id="james-tab" data-toggle="tab"> 
-                        <i class="fa fa-gift" aria-hidden="true"></i>
-                        <h5>Photo & Gifts</h5>
+                    <li><a href="/Mobiles&Tablets/products">
+                        <img src="/images/mobile.png"> 
+                        <h5>Mobiles & Tablets</h5>
                     </a></li>
-                    <li role="presentation"><a href="#decor" role="tab" id="decor-tab" data-toggle="tab"> 
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <h5>Home Decor</h5>
+                    <li><a href="/Women's Apparel/products">
+                        <img src="/images/woman.png"> 
+                        <h5>Women's Apparel</h5>
                     </a></li>
-                    <li role="presentation"><a href="#sports" role="tab" id="sports-tab" data-toggle="tab"> 
-                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                        <h5>Sports</h5>
-                    </a></li> 
+
+
                 </ul>
                 <div class="clearfix"> </div>
             </div>  

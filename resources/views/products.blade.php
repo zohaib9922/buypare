@@ -16,7 +16,7 @@
             </div>
             <div class="col-sm-3">
                <div class="left-sidebar">
-                  <h2>Category</h2>
+                  <h2>category</h2>
                   <div class="panel-group category-products" id="accordian">
                      <!--category-productsr-->
                      <div class="panel panel-default">
@@ -140,36 +140,106 @@
                </div>
             </div>
             <div style="justify-content: center;" class="wrap-flex products-container col-sm-9">
+               {{-- @if ($count/2 == 0) --}}
                <div class="wrapper">
-                    @foreach ($products as $product)                    
+                  @php
+                     $data = $Lazaadaproducts->merge($products);
+                     $shuffled = $data->shuffle();
+                  @endphp
+                  @foreach ($shuffled as $product) 
+                        <div class="col-md-3 lazy product-colum col-sm-6">
+                           <div class="product-grid3">
+                              <div class="product-image3">
+                              @if(!empty($product->product_title))
+                                 <a href="/product-detail/{{ $product->product_title }}">
+                              @else
+                                 <a href="/product-detail/{{ $product->field_one }}">
+                              @endif
+
+                              @if(!empty($product->image_url1))
+                                 <img class="pic-1" src="{{ $product->image_url1 }}">
+                              @endif
+
+                              @if(!empty($product->image_url2 ))
+                                 <img class="pic-2" src="{{ $product->image_url2 }}">
+                              @endif
+
+                              </a>
+                              <ul class="social">
+                                 @if(!empty($product->product_title))
+                                    <li><a href="/product-detail/{{ $product->product_title }}"><i class="fa fa-shopping-cart"></i></a></li>
+                                 @else
+                                    <li><a href="/product-detail/{{ $product->field_one }}"><i class="fa fa-shopping-cart"></i></a></li>
+                                 @endif
+                              </ul>
+                              </div>
+                              <div class="product-content">
+                                 @if(!empty($product->product_title))
+                                    <h3 class="title"><a href="/product-detail/{{ $product->product_title }}"><b>{{ $product->product_title }}</b></a></h3>
+                                 @else
+                                    <h3 class="title"><a href="/product-detail/{{ $product->field_one }}"><b>{{ $product->field_one }}</b></a></h3> 
+                                 @endif
+
+                                 @if(!empty($product->Price))
+                                    <span style="display:block; margin-bottom:10px;" class="specifications-1">{{ $product->price }}</span>
+                                 @else
+                                    <span style="display:block; margin-bottom:10px;" class="specifications-1">{{ $product->field_six }}</span>    
+                                 @endif
+
+                                 @if(!empty($product->category))
+                                    <span style="display:block; margin-bottom:10px;" class="specifications-1">category: {{ $product->category }}</span>
+                                 @else
+                                    <span style="display:block; margin-bottom:10px;" class="specifications-1">category: {{ $product->category }}</span> 
+                                 @endif
+                              <div class="location-span">
+                                 @if(!empty($product->category))                                 
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i><span class="location">{{ $product->location }}</span>
+                                 @else
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i><span class="location">{{ $product->prod_text }}</span>
+                                 @endif
+
+                                 @if($product->getTable() == 'lazada_products')
+                                    <span class="company-icon"><img src="/images/Lazada-icon.svg"></span>
+                                 @else
+                                    <span class="company-icon"><img src="/images/shopee-icon.png"></span>
+                                 @endif
+                              </div>
+                              </div>
+                           </div>
+                        </div>                  
+                    @endforeach
+                    {{-- @foreach ($products as $product)                    
                         <div class="col-md-3 lazy product-colum col-sm-6">
                             <div class="product-grid3">
                                 <div class="product-image3">
-                                <a href="/product-detail/{{ $product->Field1 }}">
+                                <a href="/product-detail/{{ $product->field_one }}">
                                 <img class="pic-1" src="{{ $product->Image_URL }}">
                                 <img class="pic-2" src="{{ $product->Image_URL }}">
                                 </a>
                                 <ul class="social">
-                                    <li><a href="/product-detail/{{ $product->Field1 }}"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="/product-detail/{{ $product->field_one }}"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                                 </div>
                                 <div class="product-content">
-                                <h3 class="title"><a href="/product-detail/{{ $product->Field1 }}"><b>{{ $product->Field1 }}</b></a></h3>
+                                <h3 class="title"><a href="/product-detail/{{ $product->field_one }}"><b>{{ $product->field_one }}</b></a></h3>
                                 <span style="display:block; margin-bottom:10px;" class="specifications-1">{{ $product->Field6 }}</span>
-                                <span style="display:block; margin-bottom:10px;" class="specifications-1">Category: {{ $product->Category }}</span>
+                                <span style="display:block; margin-bottom:10px;" class="specifications-1">category: {{ $product->category }}</span>
                                 <div class="location-span">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i><span class="location">{{ $product->Text1 }}</span>
-                                    <span class="company-icon"><img src="/images/Lazada-icon.svg"></span>
+                                    <span class="company-icon"><img src="/images/shopee-icon.png"></span>
                                 </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
+                     --}}
+                    
                </div>
                 <div class="pagination">
-                  {{ $products->links('pagination::bootstrap-4') }}
+                    {{ $Lazaadaproducts->links('pagination::bootstrap-4') }}
                 </div>
             </div>
+         </div>
          </div>
          </div>
       </div>
@@ -195,7 +265,7 @@
       }); 
    </script>
    <div id="owl-demo6" class="owl-carousel">
-      @foreach ($products as $product) 
+      @foreach ($Lazaadaproducts as $product) 
          <div class="item">
             <div class="glry-w3agile-grids agileits">
                <div class="new-tag"><h6>20% <br> Off</h6></div>
@@ -221,10 +291,14 @@
 </div>
 </div>
 @endsection
+
 @section('jsContent')
 <script src="/js/prettyphoto.js" type="text/javascript"></script>
-<script> 
-   var slider = document.getElementById("myRange");
+<script>
+
+   $(document).ready(function(){
+  
+      var slider = document.getElementById("myRange");
    var output = document.getElementById("price");
    output.innerHTML = slider.value; // Display the default slider value
    
@@ -232,9 +306,64 @@
    slider.oninput = function() {
        $("#price").val(this.value);
    }
+  
+     $(document).on('click', 'li', function(){  
+         $('#search').val($(this).text());  
+         $('#products').fadeOut();  
+     }); 
+  
+     
+     
+     $("#add").click(function(){
+          $(".top").css('display','none');
+      });
+  
+      // $("#search").focusout(function () {
+      //     $("body").css({"background-color": "transparent"});
+      //     $("#products").css({"visibility": "hidden"});
+      // });
+  
+      // $("#search").focusin(function () {
+      //     $("body").css({"background-color": "#999999"});
+      //     $("#products").css({"visibility": "visibleyy"});
+      // });
+  
+      $('#search').on('keyup',function() {
+          var query = $(this).val(); 
+          $.ajax({
+          
+              url:"{{ route('autocomplete') }}",
+      
+              type:"GET",
+          
+              data:{'search':query},
+          
+              success:function (data) {
+                  $('#products').html(data);
+              }
+          })
+          // end of ajax call
+      });
+  
+      
+      $(document).on('click', 'li', function(){
+      
+          var value = $(this).text();
+          $('#country').val(value);
+          $('#country_list').html("");
+      });
+     
+  });
+  
+//   function myFunction(){
+//           $("#products").css('display','none');
+//       }
+  
+//       function NewFunction(){
+//           $("#products").css('display','block');
+//       }
+  
+      
+  </script>
 
-   
-   
-   
-</script>
 @endsection

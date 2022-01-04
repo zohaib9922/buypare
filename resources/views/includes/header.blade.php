@@ -54,7 +54,7 @@
                         <a href="#0" class="cd-close">Close</a>
                         <ul class="cd-dropdown-content"> 
                             @foreach ($catData as $Data )
-                                <li><a href="{{$Data}}/products">{{ $Data  }}</a></li>    
+                                <li><a href="/{{$Data}}/products">{{ $Data  }}</a></li>    
                             @endforeach
                             
                             {{-- <li class="has-children">
@@ -976,13 +976,13 @@
    
 });
 
-function myFunction(){
-        $("#products").css('display','none');
-    }
+// function myFunction(){
+//         $("#products").css('visibility','hidden');
+//     }
 
-    function NewFunction(){
-        $("#products").css('display','block');
-    }
+//     function NewFunction(){
+//         $("#products").css('display','block');
+//     }
 
     
 </script>

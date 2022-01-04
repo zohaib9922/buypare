@@ -131,8 +131,10 @@ h1 {
 			<div class="single-page">
 				<div class="single-page-row" id="detail-21">
 					<h3 style="    padding-bottom: 9px;" class="item_name product-title-detail">
-						@if(!empty($product->Field1))
-							{{ $product->Field1 }}
+						@if(!empty($product->field_one))
+							{{ $product->field_one }}
+						@else
+							{{ $product->product_title }}
 						@endif
 					</h3>
 					<div style="margin-top:10px; " class="bread-crumbs">
@@ -140,16 +142,26 @@ h1 {
 							<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="/">Home</a></li>
 							<li class="breadcrumb-item"><a href="/products">Products</a></li>
-							<li class="breadcrumb-item active" aria-current="page">{{ $product->Field1 }}</li>
+							@if(!empty($product->field_one))
+								<li class="breadcrumb-item active" aria-current="page">{{ $product->filed_one }}</li>
+							@else
+								<li class="breadcrumb-item active" aria-current="page">{{ $product->product_title }}</li>
+							@endif
 							</ol>
 						</nav>
 					</div>
 					<div class="col-md-2 single-top-left">	
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="/images/s1.jpg">
-									<div class="thumb-image detail_images"> <img src="{{ $product->Image_URL }}" data-imagezoom="true" class="img-responsive" alt=""> </div>
-								</li>
+								@if(!empty($product->image_url))
+									<li data-thumb="/images/s1.jpg">
+										<div class="thumb-image detail_images"> <img src="{{ $product->image_url }}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+									</li>
+								@else
+									<li data-thumb="/images/s1.jpg">
+										<div class="thumb-image detail_images"> <img src="{{ $product->image_url1 }}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+									</li>
+								@endif
 								{{-- <li data-thumb="/images/s2.jpg">
 									 <div class="thumb-image"> <img src="{{ $product->image }}" data-imagezoom="true" class="img-responsive" alt=""> </div>
 								</li>
@@ -184,26 +196,26 @@ h1 {
 						</div>  --}}
 						<p class="single-price-text">Fusce a egestas nibh, eget ornare erat. Proin placerat, urna et consequat efficitur, sem odio blandit enim, sit amet euismod turpis est mattis lectus. Vestibulum maximus quam et quam egestas imperdiet. In dignissim auctor viverra. </p>
 						<ul class="detail-ul">
-							<li><img class="icons-detail" src="/images/store-icon.svg"><span>{{ $product->Field6 }} at Shopee, Lazada & 1 more Merchants </span></li>
-							<li><img class="icons-detail" src="/images/hands.svg"><span>From <b>{{ $product->Field6 }}</b></span></li>
+							<li><img class="icons-detail" src="/images/store-icon.svg"><span>{{ $product->field_six }} at Shopee, Lazada & 1 more Merchants </span></li>
+							<li><img class="icons-detail" src="/images/hands.svg"><span>From <b>{{ $product->field_six }}</b></span></li>
 							<li><img class="icons-detail" src="/images/compare.svg"><span class="compare-title"><b>Compare 1 offer</b></span></li>
 						</ul>
 						
-						@if(!empty($product->Field6))
+						@if(!empty($product->price))
 							<div class="col-md-4 right-border">
 								<p>Price</p>
-								<p><b>{{ $product->Field6 }}</b></p>
+								<p><b>{{ $product->price }}</b></p>
 							</div>
 						@endif
-						@if(!empty($product->Text1))
+						@if(!empty($product->location))
 							<div class="col-md-4 right-border">
 								<p>Location</p>
-								<p><b>{{ $product->Text1 }}</b></p>
+								<p><b>{{ $product->location }}</b></p>
 							</div>
 						@endif
 						<div class="col-md-3 right-border">
 							<p>Category</p>
-							<p><b>{{ $product->Category }}</b></p>
+							<p><b>{{ $product->category }}</b></p>
 						</div>
 							
 						
@@ -501,9 +513,17 @@ h1 {
 						<div class="item">
 							<div class="glry-w3agile-grids agileits">
 								<div class="new-tag"><h6>20% <br> Off</h6></div>
-								<a href="products1.html"><img src="{{ $product->Image_URL }}" alt="img"></a>
+								@if(!empty($product->image_url))
+									<a href="products1.html"><img src="{{ $product->image_url }}" alt="img"></a>
+								@else
+									<a href="products1.html"><img src="{{ $product->image_url1 }}" alt="img"></a>
+								@endif
 								<div class="view-caption agileits-w3layouts">           
-									<h4><a href="products1.html">Women Sandal</a></h4>
+									@if(!empty($product->field_one))	
+										<h4><a href="products1.html">{{ $product->field_one }}</a></h4>
+									@else	
+										<h4><a href="products1.html">{{ $product->product_title }}</a></h4>
+									@endif
 									<p>Lorem ipsum dolor sit amet consectetur</p>
 									<h5>$20</h5>
 									<form action="#" method="">
@@ -545,6 +565,7 @@ h1 {
 	<script defer src="/js/jquery.flexslider.js"></script>
 	<link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
 	<script>
+		
 		
 		$(document).ready(function(){
 	

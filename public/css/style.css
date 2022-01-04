@@ -2064,6 +2064,19 @@ h3.w3ls-title.w3ls-title1 {
 	-ms-transition:.5s all;
 	transition:.5s all;
 }
+.welcome .bs-example-tabs ul.nav-tabs li {
+   
+    display: inline-block;
+    float: none;
+    margin: 0 3em;
+    width: 16%;
+    margin: 0;
+
+}
+.welcome .bs-example-tabs ul.nav-tabs li img{
+    width: 54%;
+    height: auto;
+}
 .services-grids h4,.about-text-grids h4{
     font-size: 1.2em;
     margin: 1em 0 .5em;
@@ -4215,6 +4228,9 @@ h3.w3ls-title.w3ls-title1 {
     float: none;
     width: 100%;
 }
+.cd-dropdown.dropdown-is-active{
+    z-index: 1000 !important;
+}
 
 .footer-grids:nth-child(2) {
     margin: 1em 0;
@@ -4222,6 +4238,7 @@ h3.w3ls-title.w3ls-title1 {
 .nav-tabs li a i.fa {
     font-size: 1.5em;
 }
+
 .welcome .bs-example-tabs ul.nav-tabs li {
     margin: 0 0 0 .3em;
 }
